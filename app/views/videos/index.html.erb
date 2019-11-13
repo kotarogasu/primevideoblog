@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @videos.each do |video| %>
+    <div class="content_post" style="background-image: url(<%= video.image %>);">
+      <p><%= video.title %></p>
+      <span class="name">
+        <%= video.title %>
+      </span>
+    </div>
+  <% end %>
+</div>
