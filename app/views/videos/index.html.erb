@@ -4,10 +4,21 @@
     <p class="textbox__explanation">Are you wondering about the movie or program you want to watch?</p>
   </div>
 </div>
-<div class="row">
-	<div class="col-xs-6 col-md-3">
+
+<div class="thumbnails">
+  <% @videos.each do |video| %>
+    <div class="content_post" style="background-image: url(<%= video.image %>);">
+    <%= simple_format(video.text) %>
+      <span class="name">
+      </span>
+    </div>
+  <% end %>
+</div>
+	
+  <%# <div class="row"> %>
+  <%# <div class="col-xs-6 col-md-3">
 		<a href="" class="thumbnail" target="_blank">
-			<img src="http://bootstrap3.cyberlab.info/img/sample-256x256.png">
+			<img src="video.image">
 		</a>
 	</div>
 	<div class="col-xs-6 col-md-3">
@@ -26,4 +37,4 @@
 		</a>
 	</div>
 </div>
-
+ %>

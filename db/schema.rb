@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_115545) do
+ActiveRecord::Schema.define(version: 2019_11_17_153307) do
 
   create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
-    t.text "detail", null: false
-    t.string "genre", null: false
     t.string "link", null: false
-    t.string "image", null: false
+    t.text "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "text"
   end
 
 end

@@ -67,3 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'compass-rails', '3.1.0'
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'mini_magick'

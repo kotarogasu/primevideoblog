@@ -2,7 +2,7 @@
 	background:radial-gradient(ellipse at center, rgba(255,255,255,0) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,1) 100%),url(bgc.jpeg) no-repeat center;
 	background-size: cover;
 	position: relative;
-  height: 600px;
+  height: 800px;
   width: 100%;
 }
 .main-image::before{
@@ -33,5 +33,17 @@
       font-family: monospace; 
     }
   }  
+
+  .content_post{
+    display: inline-block;
+    background-color: #ccc;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc;
+    background-size: cover;
+  }
   
 
