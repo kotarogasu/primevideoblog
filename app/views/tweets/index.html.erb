@@ -6,9 +6,9 @@
 </div>
 
 <div class="thumbnails">
-  <% @videos.each do |video| %>
-    <div class="content_post" style="background-image: url(<%= video.image %>);">
-    <%= simple_format(video.text) %>
+  <% @tweets.each do |tweet| %>
+    <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+    <%= simple_format(tweet.text) %>
       <span class="name">
       </span>
     </div>
