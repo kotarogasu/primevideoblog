@@ -1,0 +1,38 @@
+.success-contents{
+  background-color: #333;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+.success{
+  margin-top: 25%;
+  margin-left: 40%;
+  margin-right: 30%;
+  font-size: xx-large;color: antiquewhite;
+
+}
+.success-btn {
+  height: 100p;
+  width: 300px;
+  font-size: xx-large;
+  margin-top: 20px;
+  background-color: #fff;
+  border: 6px solid #333;
+  color: #333;
+  line-height: 50px;
+  overflow: hidden;
+}
+.success-btn:hover {
+  color: firebrick;
+}
+.success-btn::after {
+  top: -100%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+}
+.success-btn:hover::after {
+  top: 0;
+  left: 0;
+  background-color: #333;
+}

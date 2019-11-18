@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root "videos#index"
-  resources :tweets, only: [:new, :create]
+  devise_for :users
+  root to: 'tweets#index'
+  
+  resources :tweets
 end

@@ -1,8 +1,8 @@
 .main-image{
 	background:radial-gradient(ellipse at center, rgba(255,255,255,0) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,1) 100%),url(bgc.jpeg) no-repeat center;
-	background-size: cover;
+  background-size: cover;
 	position: relative;
-  height: 800px;
+  height: 600px;
   width: 100%;
 }
 .main-image::before{
@@ -33,17 +33,69 @@
       font-family: monospace; 
     }
   }  
+.post-content{
+  background-color: black;
 
-  .content_post{
-    display: inline-block;
-    background-color: #ccc;
-    background-position: center center;
-    background-repeat: no-repeat;
-    margin: 5px;
-    width: 300px;
-    height: 300px;
-    border: 1px solid #ccc;
-    background-size: cover;
+  .posts-title{
+    background:#000;
+    color:#fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    width:100%;
+    border-top:13px dashed #fff;
+    border-bottom:13px dashed #fff;
+    box-shadow: 0 0 3px 8px #000,25px 20px 4px 2px rgba(0,0,0,0.2);
+    text-shadow: 0 0 5px;
+    text-align: center;
+    padding:30px;
+    margin:20px,20px;
+    margin-bottom: 30px
   }
+
+  .thumbnails{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+  }
+    .thumbnail{
+      position: relative;
+      margin: 5px;
+      margin-left: 10px;
+    }
+      .content-post{
+        background-color: #ccc;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 20px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgb(156, 146, 146);
+        background-size: contain;
+        cursor: pointer;
+        transition-duration: 0.5s;
+        &__link{
+          font-size: 300px;
+          line-height: 300px;
+          opacity:0; 
+          }
+      }
+      .content-post:hover{
+      transform: rotateX( 360deg );
+      transition-duration: 2.5s;
+      }
+      .name{
+        color: #fff;
+        position: absolute;
+        bottom: -10px;
+        right: 70%;
+        font-size: 20px;
+      }
+
+}
+
   
 

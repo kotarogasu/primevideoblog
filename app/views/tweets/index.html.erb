@@ -2,39 +2,20 @@
   <div class="textbox">
     <h1 class="textbox__intro"> Welcome to those who like<br>amazon prime video!</h1>
     <p class="textbox__explanation">Are you wondering about the movie or program you want to watch?</p>
-  </div>
-</div>
+	</div>
+</div>	
 
-<div class="thumbnails">
-  <% @tweets.each do |tweet| %>
-    <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-    <%= simple_format(tweet.text) %>
-      <span class="name">
-      </span>
-    </div>
-  <% end %>
+<div class="post-content">
+	<div class="posts-title">投稿一覧</div>
+		<div class="thumbnails">
+			<% @tweets.each do |tweet| %>
+			<div class="thumbnail">
+				<div class="content-post" style="background-image: url(<%= tweet.image %>);">
+					<%= link_to  '詳', "/tweets/#{tweet.id}", method: :get, class:"content-post__link" %>
+				</div>
+
+					<span class="name">投稿者：</span>
+			</div>			
+			<% end %>
+		</div>
 </div>
-	
-  <%# <div class="row"> %>
-  <%# <div class="col-xs-6 col-md-3">
-		<a href="" class="thumbnail" target="_blank">
-			<img src="video.image">
-		</a>
-	</div>
-	<div class="col-xs-6 col-md-3">
-		<a href="http://bootstrap3.cyberlab.info/img/sampleB-256x256.png" class="thumbnail" target="_blank">
-			<img src="http://bootstrap3.cyberlab.info/img/sampleB-256x256.png">
-		</a>
-	</div>
-	<div class="col-xs-6 col-md-3">
-		<a href="http://bootstrap3.cyberlab.info/img/sampleC-256x256.png" class="thumbnail" target="_blank">
-			<img src="http://bootstrap3.cyberlab.info/img/sampleC-256x256.png">
-		</a>
-	</div>
-	<div class="col-xs-6 col-md-3">
-		<a href="http://bootstrap3.cyberlab.info/img/sampleD-256x256.png" class="thumbnail" target="_blank">
-			<img src="http://bootstrap3.cyberlab.info/img/sampleD-256x256.png">
-		</a>
-	</div>
-</div>
- %>
