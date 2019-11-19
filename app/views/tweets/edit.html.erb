@@ -2,7 +2,6 @@
   <div class="container">
     <%= form_with(model: @tweet, local: true) do |form| %>
       <div class="form-title"><h1>[編集内容を入力してください]</h1></div>
-      <%= form.text_field :name, placeholder: "ユーザーネームを入力してください", class:"name-form" %>
       <%= form.text_field :title, placeholder: "タイトルを入力してください", class:"title-form"%>
       <%= form.text_field :image, placeholder: "Image Urlを貼ってください", class:"image-form" %>
       <%= form.text_field :link, placeholder: "linkを貼ってください", class:"link-form" %>

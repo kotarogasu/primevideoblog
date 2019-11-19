@@ -1,0 +1,92 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sign-up__contents{
+  margin-top: 8%;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background-color: #444;
+  position: fixed;
+}
+.sign-up__text{
+  margin-top: 5%;
+  font-size: xx-large;
+  margin-left: 20px;
+}
+.field{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.actions-btn{
+  margin-top: 20px;
+  margin-left: 20px;
+  display: inline-block;
+  max-width: 180px;
+  margin-right: 10px;
+  text-align: left;
+  background-color: orange;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  border-bottom: 4px solid #d37800;
+}
+.actions-btn:active {
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+
+.login-form {
+  //background: #222;
+  //box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+  min-height: 10rem;
+  margin: auto;
+  max-width: 50%;
+  padding: .5rem;
+  background-color: #444;
+  width: 100vw;
+  margin-top: 200px;
+}
+.login-text {
+  //background: hsl(40,30,60);
+  //border-bottom: .5rem solid white;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+  text-align: center;
+  //text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
+  .fa-stack-1x {
+    color: black;
+  }
+}
+
+.actions-btn__login{
+  margin-top: 20px;
+  margin-left: 20px;
+  display: inline-block;
+  max-width: 180px;
+  margin-right: 10px;
+  text-align: left;
+  background-color: orange;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  border-bottom: 4px solid #d37800;
+}
+.actions-btn:active {
+  transform: translateY(4px);
+  border-bottom: none;
+}
+

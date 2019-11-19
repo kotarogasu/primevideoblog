@@ -24,17 +24,19 @@
     &__intro{
       color: aliceblue;
       font-size: 50px;
-      font-family: fantasy;
+      font-family: cursive;
       margin-bottom: 10px;
+      margin-top: 20px;
     }
     &__explanation{
       color: aliceblue;
       font-size: 30px;
-      font-family: monospace; 
+      font-family: cursive;
     }
   }  
 .post-content{
   background-color: black;
+  padding-bottom: 10px;
 
   .posts-title{
     background:#000;
@@ -87,12 +89,14 @@
       transform: rotateX( 360deg );
       transition-duration: 2.5s;
       }
-      .name{
+      .nickname-text{
         color: #fff;
         position: absolute;
         bottom: -10px;
-        right: 70%;
-        font-size: 20px;
+        right: 50%;
+        font-size: 15px;
+        width: 150px;
+        height: 20px;
       }
 
 }
