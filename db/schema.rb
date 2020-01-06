@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_202629) do
+ActiveRecord::Schema.define(version: 2019_12_28_173134) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
@@ -20,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_11_18_202629) do
     t.datetime "updated_at", null: false
     t.text "text"
     t.integer "user_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_tweets_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,4 +44,5 @@ ActiveRecord::Schema.define(version: 2019_11_18_202629) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tweets", "categories"
 end

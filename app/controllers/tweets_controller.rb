@@ -14,6 +14,14 @@ class TweetsController < ApplicationController
     Tweet.create(tweet_params)
   end
 
+  def category_find
+    respond_to do |format| 
+      parent = Category.find(params[:category_id])
+      @children = parent.children
+      format.json
+    end
+  end
+
   def show
   end
 
@@ -32,7 +40,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:title, :image, :text, :link,).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:title, :image, :text, :link, :category_id).merge(user_id: current_user.id)
   end
 
   def set_tweet

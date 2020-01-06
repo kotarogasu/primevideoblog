@@ -1,0 +1,19 @@
+.main-image
+  .textbox
+    %p.textbox__explanation
+      Are you wondering about
+      = succeed "the" do
+        %br/
+    %h1.textbox__intro Share reviews with everyone!
+.post-content
+  .posts-title 投稿一覧
+
+  
+  .thumbnails
+    - @tweets.each do |tweet|
+      .thumbnail
+        .content-post{:style => "background-image: url(#{tweet.image});"}
+          = link_to  '詳', "/tweets/#{tweet.id}", method: :get, class:"content-post__link"
+        %a{:href => "/users/#{tweet.user.id}"}
+          .nickname-text
+            投稿者：#{tweet.user.nickname}

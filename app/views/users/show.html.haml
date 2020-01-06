@@ -1,0 +1,7 @@
+.post-content
+  .posts-title 投稿一覧
+  .thumbnails
+    - @tweets.each do |tweet|
+      .thumbnail
+        .content-post{:style => "background-image: url(#{tweet.image});"}
+          = link_to  '詳', "/tweets/#{tweet.id}", method: :get, class:"content-post__link"

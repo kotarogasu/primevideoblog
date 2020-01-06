@@ -1,0 +1,47 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{:defer => "defer", :src => "http://code.jquery.com/jquery-3.3.1.min.js"}
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    / Required meta tags
+    = csrf_meta_tags
+    = csp_meta_tag
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    / Bootstrap CSS
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity => "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :rel => "stylesheet"}/
+    = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+    %title Primevideoserch
+  %body
+    %nav.navbar.navbar-expand-lg.navbar-light
+      %i.fab.fa-amazon.fa-6x{:style => "color:orange;"}
+      %h3
+        %a.navbar-title{:href => "/"} PrimeVideoBlog
+      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        - if user_signed_in?
+          %ul.navbar-nav
+            %li.nav-item
+              = link_to "My page", "/users/#{current_user.id}"
+            %li.nav-item
+              = link_to  "Post", "/tweets/new", class: "post"
+            %li.nav-item
+              = link_to "Log out", destroy_user_session_path, method: :delete
+          %h3.nickname-text
+            ログイン中：#{current_user.nickname}
+        - else
+          %ul.navbar-nav
+            %li.nav-item
+              = link_to "Log in", new_user_session_path, class: 'post'
+            %li.nav-item
+              = link_to "sign up", new_user_registration_path, class: 'post'
+      
+    / Optional JavaScript
+    / jQuery first, then Popper.js, then Bootstrap JS
+    %script{:crossorigin => "anonymous", :integrity => "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :src => "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", :src => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"}
+  %html= yield
