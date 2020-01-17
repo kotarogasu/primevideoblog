@@ -38,6 +38,32 @@
   background-color: black;
   padding-bottom: 10px;
 
+  .search-form{
+   text-align: center;
+  }
+  .search-input{
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    border-radius: 3px;
+    height: 2.5em;
+  }
+  .search-btn{
+    cursor: pointer;
+    font-size: 1.2em;
+    border: none;
+    background: #3879D9;
+    border: 1px solid #3879D9;
+    border-radius: 3px;
+    color: #fff;
+    outline : none;
+    width: 3.5em;
+    height: 1.9em;
+    display: inline-block;
+    vertical-align: middle;
+  }
   .posts-title{
     background:#000;
     color:#fff;
@@ -49,7 +75,7 @@
     border-bottom:13px dashed #fff;
     box-shadow: 0 0 3px 8px #000,25px 20px 4px 2px rgba(0,0,0,0.2);
     text-shadow: 0 0 5px;
-    text-align: center;
+    text-align: center; 
     padding:30px;
     margin:20px,20px;
     margin-bottom: 30px
@@ -98,7 +124,6 @@
         width: 150px;
         height: 20px;
       }
-
 }
 
   

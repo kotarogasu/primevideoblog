@@ -1,19 +1,25 @@
-.contents
-  = form_with(model: @tweet, local: true) do |form|
-    .form-title
-      %h1 [投稿内容を入力してください]
-    = form.text_field :title, placeholder: "タイトルを入力してください", class:"title-form"
-    = form.text_field :image, placeholder: "Image Urlを貼ってください", class:"image-form"
-    = form.text_field :link, placeholder: "linkを貼ってください", class:"link-form"
-    = form.text_area :text, placeholder: "コメントを入力してください" , rows: "10", class:"text-form"
-    #category-wraps
-      .select-wrap
-        %i.fas.fa-chevron-down
-        =form.collection_select :category_id, Category.roots, :id, :name, {prompt: '---'}, class: "select-default", id: "category-select" 
-      .select-wrap#child-wrap
-        %i.fas.fa-chevron-down
-        =form.select :category_id, {}, {}, class: "select-default", id: "child-select" do
-          - if @tweet.category.present?
-            %option{value: "#{item.category.parent.id}", class: "child-option"}
-              =item.category.parent.name
-    = form.submit "SEND", class:"sdn-btn"
+%html{:lang => "ja"}
+  %head
+    %script{:defer => "defer", :src => "http://code.jquery.com/jquery-3.3.1.min.js"}
+  %body
+    .contents
+      = form_with(model: @tweet, local: true) do |form|
+        .form-title
+          %h1 [投稿内容を入力してください]
+        = form.text_field :title, placeholder: "タイトルを入力してください", class:"title-form"
+        = form.text_field :image, placeholder: "Image Urlを貼ってください", class:"image-form"
+        = form.text_field :link, placeholder: "linkを貼ってください", class:"link-form"
+        = form.text_area :text, placeholder: "コメントを入力してください" , rows: "10", class:"text-form"
+        #category-wraps
+          .select-wrap
+            %i.fas.fa-chevron-down
+            =form.collection_select :category_id, Category.roots, :id, :name, {prompt: '---'}, class: "select-default", id: "category-select" 
+          .select-wrap#child-wrap
+            %i.fas.fa-chevron-down
+            =form.select :category_id, {}, {}, class: "select-default", id: "child-select" do
+              - if @tweet.category.present?
+                %option{value: "#{item.category.parent.id}", class: "child-option"}
+                  =item.category.parent.name
+        = form.submit "SEND", class:"sdn-btn"
+  %script{:crossorigin => "anonymous", :integrity => "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :src => "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
+  %script{:crossorigin => "anonymous", :integrity => "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}

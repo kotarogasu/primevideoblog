@@ -28,7 +28,6 @@ $(function(){
   if(window.location.href.match(/\/tweets\/new/)){
     // 商品の出品ページ用js
     $("#child-wrap").hide();
-    console.log("OK")
     
   }else if (window.location.href.match(/\/tweets/)){
     // 商品の出品失敗ページ、編集ページ

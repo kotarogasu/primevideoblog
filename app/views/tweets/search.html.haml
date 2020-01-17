@@ -1,17 +1,9 @@
-.main-image
-  .textbox
-    %p.textbox__explanation
-      Are you wondering about
-      = succeed "the" do
-        %br/
-    %h1.textbox__intro Share reviews with everyone!
 .post-content
   .posts-title 投稿一覧
   = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
     = form.text_field :keyword, placeholder: "作品を検索する", class: "search-input"
     = form.submit value: "検索", class: "search-btn"
   .thumbnails
-  
     - @tweets.each do |tweet|
       .thumbnail
         .content-post{:style => "background-image: url(#{tweet.image});"}
