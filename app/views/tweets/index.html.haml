@@ -10,8 +10,17 @@
   = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
     = form.text_field :keyword, placeholder: "作品を検索する", class: "search-input"
     = form.submit value: "検索", class: "search-btn"
+  .category-name
+    =link_to "洋画・SF ＞", "#", class: "category-show"
   .thumbnails
-  
+    - @sf.each do |sf|
+      .thumbnail
+        .content-post{:style => "background-image: url(#{sf.image});"}
+          = link_to  '詳', "/tweets/#{sf.id}", method: :get, class:"content-post__link"
+        %a{:href => "/users/#{sf.user.id}"}
+          .nickname-text
+            投稿者：#{sf.user.nickname}
+  .thumbnails
     - @tweets.each do |tweet|
       .thumbnail
         .content-post{:style => "background-image: url(#{tweet.image});"}
