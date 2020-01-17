@@ -1,0 +1,15 @@
+.video-content
+  .video-product
+    .video-image{:style => "background-image: url(#{@product.image});"}
+    .more
+      %a{:href => "/users/#{@product.user.id}"}
+        %p.product-name
+          投稿者：#{@product.user.nickname}
+      %p.product-date= (@product.updated_at.strftime("%Y/%m/%d %H:%M"))
+      %p.video-title= (@product.title)
+      %p.video-text= (@product.text)
+      .video-under
+        - if user_signed_in? && current_user.id == @product.user_id
+          = link_to  'edit', "/products/#{@product.id}/edit", method: :get, class:"video-btn__edit"
+          = link_to  'delete', "/products/#{@product.id}", method: :delete, class:"video-btn__delete"
+        = link_to  'Primevideoへ', url=@product.link, class:"video-btn__link"

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'tweets#index'
-  resources :tweets do
+  root to: 'products#index'
+  resources :products do
     collection do
       get :category_find
       get :search

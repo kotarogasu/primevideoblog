@@ -27,7 +27,7 @@
             %li.nav-item
               = link_to "My page", "/users/#{current_user.id}"
             %li.nav-item
-              = link_to  "Post", "/tweets/new", class: "post"
+              = link_to  "Post", "/products/new", class: "post"
             %li.nav-item
               = link_to "Log out", destroy_user_session_path, method: :delete
           %h3.nickname-text

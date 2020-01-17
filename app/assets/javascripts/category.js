@@ -8,7 +8,7 @@ $(function(){
   $('#category-wraps').on('change','#category-select', function(){
     var parent_id = $(this).val();
     $.ajax({
-      url: "/tweets/category_find",
+      url: "/products/category_find",
       type: "GET",
       dataType: 'json',
       data: {
@@ -25,17 +25,17 @@ $(function(){
     });
   });
 
-  if(window.location.href.match(/\/tweets\/new/)){
+  if(window.location.href.match(/\/products\/new/)){
     // 商品の出品ページ用js
     $("#child-wrap").hide();
     
-  }else if (window.location.href.match(/\/tweets/)){
+  }else if (window.location.href.match(/\/products/)){
     // 商品の出品失敗ページ、編集ページ
     $("#child-wrap").show();
 
     let root_id = $('#category-select').val();
     $.ajax({
-      url: "/tweets/category_find",
+      url: "/products/category_find",
       type: "GET",
       dataType: 'json',
       data: {
@@ -52,7 +52,7 @@ $(function(){
   // ロードして即 
     parent_id = $('#child-select').val();
     $.ajax({
-      url: "/tweets/category_find",
+      url: "/products/category_find",
       type: "GET",
       dataType: 'json',
       data: {

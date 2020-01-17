@@ -3,7 +3,7 @@
     %script{:defer => "defer", :src => "http://code.jquery.com/jquery-3.3.1.min.js"}
   %body
     .contents
-      = form_with(model: @tweet, local: true) do |form|
+      = form_with(model: @product, local: true) do |form|
         .form-title
           %h1 [投稿内容を入力してください]
         = form.text_field :title, placeholder: "タイトルを入力してください", class:"title-form"
@@ -17,7 +17,7 @@
           .select-wrap#child-wrap
             %i.fas.fa-chevron-down
             =form.select :category_id, {}, {}, class: "select-default", id: "child-select" do
-              - if @tweet.category.present?
+              - if @product.category.present?
                 %option{value: "#{item.category.parent.id}", class: "child-option"}
                   =item.category.parent.name
         = form.submit "SEND", class:"sdn-btn"

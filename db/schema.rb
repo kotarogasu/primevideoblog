@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_173134) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
     t.string "link", null: false
     t.text "image", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_173134) do
     t.text "text"
     t.integer "user_id"
     t.bigint "category_id"
-    t.index ["category_id"], name: "index_tweets_on_category_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -44,5 +44,5 @@ ActiveRecord::Schema.define(version: 2019_12_28_173134) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "tweets", "categories"
+  add_foreign_key "products", "categories"
 end
