@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
+    @sf = Tweet.where(category_id:4)
   end
 
   def new
@@ -36,6 +37,10 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
+  end
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
   end
 
   private
