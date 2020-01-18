@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  default_scope -> { order(created_at: :desc) }
+  
   validates :text, presence: true
   belongs_to :user
   belongs_to :category, optional: true

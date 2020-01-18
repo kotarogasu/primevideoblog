@@ -1,23 +1,14 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
-
+  before_action :category_type, only:[:index, :category_show]
+  
   def index
-    @products = Product.includes(:user).order("created_at DESC")
-    @action = Product.where(category_id:2)
-    @sf = Product.where(category_id:3)
-    @comedy = Product.where(category_id:4)
-    @human = Product.where(category_id:5).or(Product.where(category_id:9))
-    @fantasy = Product.where(category_id:6)
-    @lovestory = Product.where(category_id:7)
-    @horror = Product.where(category_id:8)
-    @musical= Product.where(category_id:10)
-    @war = Product.where(category_id:11)
-    @documentary = Product.where(category_id:12)
-    @jmovie = Product.where(category_id:13)
-    @kmovie = Product.where(category_id:14)
-    @etc = Product.where(category_id:15)
   end
+
+  def category_show
+
+  end  
 
   def new
     @product = Product.new
@@ -62,6 +53,22 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id]) 
+  end
+
+  def category_type
+    @action = Product.where(category_id:2)
+    @sf = Product.where(category_id:3)
+    @comedy = Product.where(category_id:4)
+    @human = Product.where(category_id:5).or(Product.where(category_id:9))
+    @fantasy = Product.where(category_id:6)
+    @lovestory = Product.where(category_id:7)
+    @horror = Product.where(category_id:8)
+    @musical= Product.where(category_id:10)
+    @war = Product.where(category_id:11)
+    @documentary = Product.where(category_id:12)
+    @jmovie = Product.where(category_id:13)
+    @kmovie = Product.where(category_id:14)
+    @etc = Product.where(category_id:15)
   end
 
   def move_to_index

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       get :category_find
       get :search
     end
+    member do
+      get :category_show
+    end
   end
-  
   resources :users, only: :show
 end

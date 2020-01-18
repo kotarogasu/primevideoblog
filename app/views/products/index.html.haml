@@ -11,35 +11,38 @@
     = form.text_field :keyword, placeholder: "作品を検索する", class: "search-input"
     = form.submit value: "検索", class: "search-btn"
   .category-name
-    =link_to "アクション・アドベンチャー ＞", "", class: "category-show"
+    =link_to "アクション・アドベンチャー ＞",category_show_product_path(1) , class: "category-show"
   = render partial: "product-card", locals: {products: @action}
   .category-name
-    =link_to "SF映画 ＞", "#", class: "category-show"
+    =link_to "SF映画 ＞", category_show_product_path(2), class: "category-show"
   = render partial: "product-card", locals: {products: @sf}
   .category-name
-    =link_to "コメディ ＞", "#", class: "category-show"
+    =link_to "コメディ ＞", category_show_product_path(3), class: "category-show"
   = render partial: "product-card", locals: {products: @comedy}
   .category-name
-    =link_to "ヒューマン・ドラマ ＞", "#", class: "category-show"
+    =link_to "ヒューマン・ドラマ ＞", category_show_product_path(4), class: "category-show"
   = render partial: "product-card", locals: {products: @human}
   .category-name
-    =link_to "ファンタジー ＞", "#", class: "category-show"
+    =link_to "ファンタジー ＞", category_show_product_path(5), class: "category-show"
   = render partial: "product-card", locals: {products: @fantasy}
   .category-name
-    =link_to "ラブストーリー ＞", "#", class: "category-show"
+    =link_to "ラブストーリー ＞", category_show_product_path(6), class: "category-show"
   = render partial: "product-card", locals: {products: @lovestory}
   .category-name
-    =link_to "ホラー・サスペンス ＞", "#", class: "category-show"
+    =link_to "ホラー・サスペンス ＞", category_show_product_path(7), class: "category-show"
   = render partial: "product-card", locals: {products: @horror}
   .category-name
-    =link_to "戦争 ＞", "#", class: "category-show"
+    =link_to "ミュージカル ＞", category_show_product_path(8), class: "category-show"
   = render partial: "product-card", locals: {products: @musical}
   .category-name
-    =link_to "邦画 ＞", "#", class: "category-show"
+    =link_to "戦争 ＞", category_show_product_path(9), class: "category-show"
+  = render partial: "product-card", locals: {products: @war}
+  .category-name
+    =link_to "邦画 ＞", category_show_product_path(10), class: "category-show"
   = render partial: "product-card", locals: {products: @jmovie}
   .category-name
-    =link_to "韓国映画 ＞", "#", class: "category-show"
+    =link_to "韓国映画 ＞", category_show_product_path(11), class: "category-show"
   = render partial: "product-card", locals: {products: @kmovie}
   .category-name
-    =link_to "その他 ＞", "#", class: "category-show"
+    =link_to "その他 ＞", category_show_product_path(12), class: "category-show"
   = render partial: "product-card", locals: {products: @etc}
