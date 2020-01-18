@@ -8,4 +8,5 @@ class Product < ApplicationRecord
     Product.where('text collate utf8_unicode_ci LIKE(?) OR title collate utf8_unicode_ci LIKE(?)', "%#{search}%", "%#{search}%" )
     #ひらがな、カタカなでも検索可能 
   end
+
 end
