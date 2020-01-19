@@ -2,7 +2,9 @@
   .post-content
     - case 
     - when current_page?(category_show_product_path(1))
-      = render partial: "product-card", locals: {products: @action}
+      .category-show
+        アクション・アドベンチャー
+        = render partial: "product-card", locals: {products: @action}
     - when current_page?(category_show_product_path(2))
       = render partial: "product-card", locals: {products: @sf}
     - when current_page?(category_show_product_path(3))

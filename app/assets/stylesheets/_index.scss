@@ -40,6 +40,10 @@
 
   .search-form{
    text-align: center;
+   position: sticky;
+   top: 0;
+   z-index: 1;
+   background-color: black;
   }
   .search-input{
     margin: 20px;
@@ -91,23 +95,23 @@
   }
     .thumbnail{
       position: relative;
-      margin-left: 10px;
+      margin-left: 5px;
     }
       .content-post{
         background-color: #ccc;
         background-position: center center;
         background-repeat: no-repeat;
-        margin: 20px;
+        margin: 20px 5px 20px 20px;
         width: 300px;
-        height: 300px;
+        height: 260px;
         border: 1px solid rgb(156, 146, 146);
-        background-size: contain;
+        background-size: 100% 100%;
         cursor: pointer;
         transform: scale(1);
         transition:all 0.2s;
         &__link{
           font-size: 300px;
-          line-height: 300px;
+          line-height: 280px;
           opacity:0; 
           }
       }
@@ -118,24 +122,28 @@
         color: #fff;
         position: absolute;
         bottom: -10px;
-        right: 50%;
+        right: 45%;
         font-size: 15px;
         width: 150px;
         height: 20px;
       }
-  .category-show{
-    font-size: 30px;
-    color: white;
-    margin-left: 35px;
-    text-decoration: none;
+  .category-name{
     display: inline-block;
     transition: .3s;
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-  .category-show:hover{
+  .category-name:hover{
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+  }
+  .category-show{
+    font-style: oblique;
+    font-weight: 600;
+    font-size: x-large;
+    color: white;
+    margin-left: 35px;
+    text-decoration: none;
   }
 }
 
