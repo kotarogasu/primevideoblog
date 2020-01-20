@@ -1,48 +1,71 @@
-.main-image
-  .textbox
-    %p.textbox__explanation
-      Are you wondering about
-      = succeed "the" do
-        %br/
-    %h1.textbox__intro Share reviews with everyone!
-.post-content
-  .posts-title 投稿一覧
-  = form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form|
-    = form.text_field :keyword, placeholder: "作品を検索する", class: "search-input"
-    = form.submit value: "検索", class: "search-btn"
-  .category-name
-    =link_to "アクション・アドベンチャー ＞",category_show_product_path(1) , class: "category-show"
-  = render partial: "product-card", locals: {products: @action}
-  .category-name
-    =link_to "SF映画 ＞", category_show_product_path(2), class: "category-show"
-  = render partial: "product-card", locals: {products: @sf}
-  .category-name
-    =link_to "コメディ ＞", category_show_product_path(3), class: "category-show"
-  = render partial: "product-card", locals: {products: @comedy}
-  .category-name
-    =link_to "ヒューマン・ドラマ ＞", category_show_product_path(4), class: "category-show"
-  = render partial: "product-card", locals: {products: @human}
-  .category-name
-    =link_to "ファンタジー ＞", category_show_product_path(5), class: "category-show"
-  = render partial: "product-card", locals: {products: @fantasy}
-  .category-name
-    =link_to "ラブストーリー ＞", category_show_product_path(6), class: "category-show"
-  = render partial: "product-card", locals: {products: @lovestory}
-  .category-name
-    =link_to "ホラー・サスペンス ＞", category_show_product_path(7), class: "category-show"
-  = render partial: "product-card", locals: {products: @horror}
-  .category-name
-    =link_to "ミュージカル ＞", category_show_product_path(8), class: "category-show"
-  = render partial: "product-card", locals: {products: @musical}
-  .category-name
-    =link_to "戦争 ＞", category_show_product_path(9), class: "category-show"
-  = render partial: "product-card", locals: {products: @war}
-  .category-name
-    =link_to "邦画 ＞", category_show_product_path(10), class: "category-show"
-  = render partial: "product-card", locals: {products: @jmovie}
-  .category-name
-    =link_to "韓国映画 ＞", category_show_product_path(11), class: "category-show"
-  = render partial: "product-card", locals: {products: @kmovie}
-  .category-name
-    =link_to "その他 ＞", category_show_product_path(12), class: "category-show"
-  = render partial: "product-card", locals: {products: @etc}
+%head
+  %link{:href => "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css", :rel => "stylesheet"}/
+  %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+  %script{:src => "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"}
+%body
+  %ul.main-image
+    %li
+      = image_tag "youga.png", class:"slider-img"
+    %li
+      = image_tag "ytv.jpg", class:"slider-img" 
+    %li
+      = image_tag "joker.jpg", class:"slider-img-small"
+    %li
+      = image_tag "iq246.jpg", class:"slider-img-small"
+    %li
+      = image_tag "anime2.png", class:"slider-img"
+    %li
+      = image_tag "got.jpg", class:"slider-img-small"
+    %li
+      = image_tag "jtv5.png", class:"slider-img"
+    %li
+      = image_tag "chidori.png", class:"slider-img"
+    %li
+      = image_tag "ytv2.jpg", class:"slider-img-small"
+    %li
+      = image_tag "ytv3.png", class:"slider-img"
+    %li
+      = image_tag "kokoguru.png", class:"slider-img"
+
+    
+  .post-content
+    = form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "作品を検索する", class: "search-input"
+      = form.submit value: "検索", class: "search-btn"
+    .category-name
+      =link_to "アクション・アドベンチャー ＞",category_show_product_path(1) , class: "category-show"
+    = render partial: "product-card", locals: {products: @action}
+    .category-name
+      =link_to "SF映画 ＞", category_show_product_path(2), class: "category-show"
+    = render partial: "product-card", locals: {products: @sf}
+    .category-name
+      =link_to "コメディ ＞", category_show_product_path(3), class: "category-show"
+    = render partial: "product-card", locals: {products: @comedy}
+    .category-name
+      =link_to "ヒューマン・ドラマ ＞", category_show_product_path(4), class: "category-show"
+    = render partial: "product-card", locals: {products: @human}
+    .category-name
+      =link_to "ファンタジー ＞", category_show_product_path(5), class: "category-show"
+    = render partial: "product-card", locals: {products: @fantasy}
+    .category-name
+      =link_to "ラブストーリー ＞", category_show_product_path(6), class: "category-show"
+    = render partial: "product-card", locals: {products: @lovestory}
+    .category-name
+      =link_to "ホラー・サスペンス ＞", category_show_product_path(7), class: "category-show"
+    = render partial: "product-card", locals: {products: @horror}
+    .category-name
+      =link_to "ミュージカル ＞", category_show_product_path(8), class: "category-show"
+    = render partial: "product-card", locals: {products: @musical}
+    .category-name
+      =link_to "戦争 ＞", category_show_product_path(9), class: "category-show"
+    = render partial: "product-card", locals: {products: @war}
+    .category-name
+      =link_to "邦画 ＞", category_show_product_path(10), class: "category-show"
+    = render partial: "product-card", locals: {products: @jmovie}
+    .category-name
+      =link_to "韓国映画 ＞", category_show_product_path(11), class: "category-show"
+    = render partial: "product-card", locals: {products: @kmovie}
+    .category-name
+      =link_to "その他 ＞", category_show_product_path(12), class: "category-show"
+    = render partial: "product-card", locals: {products: @etc}
+
