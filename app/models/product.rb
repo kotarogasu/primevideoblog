@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
-  
+  acts_as_taggable_on :labels
+  acts_as_taggable
+
   validates :text, presence: true
   belongs_to :user
   belongs_to :category, optional: true

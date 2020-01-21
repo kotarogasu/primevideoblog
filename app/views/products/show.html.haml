@@ -7,6 +7,12 @@
           投稿者：#{@product.user.nickname}
       %p.product-date= (@product.updated_at.strftime("%Y/%m/%d %H:%M"))
       %p.video-title= (@product.title)
+      .tags-box
+        - @tag.each do |tag|
+          %span.badge.badge-primary.mr-1.p-2= tag
+      
+      .review-text
+        レビュー
       %p.video-text= (@product.text)
       .video-under
         - if user_signed_in? && current_user.id == @product.user_id

@@ -73,4 +73,7 @@ gem 'mini_magick'
 gem 'devise'
 gem 'haml-rails'
 gem 'ancestry'
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'bootstrap-sass'
+
 
