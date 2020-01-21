@@ -15,15 +15,15 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.thumbnails').bxSlider({
+  $('.card-area').bxSlider({
     speed: 500,          // スライドするスピード
     moveSlides: 1,        // 移動するスライド数
     pause: 3500,          // 自動スライドの待ち時間
     maxSlides: 5,         // 一度に表示させる最大
     minSlides: 1,
     responsive: true,
-    // slideMargin: 0, 
-    slideWidth: 330,      // 各スライドの幅
+    slideMargin: 10, 
+    slideWidth: 300,      // 各スライドの幅
     touchEnabled:false,  //リンク対策
 	  randomStart: false,    // 最初に表示するスライドをランダムに設定
     infiniteLoop:false,   //ループしない
