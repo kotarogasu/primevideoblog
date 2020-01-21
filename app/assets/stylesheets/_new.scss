@@ -4,12 +4,15 @@
   height: 100vh;
 }
 .form-title{
-  font-size:30px;
+  font-size:20px;
   font-family: cursive;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: aliceblue;
   display: flex;
   justify-content: center;
+}
+.tag-form{
+  margin: 10px;
 }
 .form-index{
   font-size: 20px;
@@ -111,5 +114,21 @@
   -webkit-transition: 0.2s ease-in-out;
   height: 40px;
   width: 150px;
+  margin-top: 160px;
+  margin-left: 100px;
+}
+.label-name{
+  color: aliceblue;
+}
+.label.label-primary{
+  font-size: 15px;
 }
 
+.tag-box{
+  margin-top: 10px;
+}
+
+.select-default{
+  height: 34px;
+  width: 350px;
+}
