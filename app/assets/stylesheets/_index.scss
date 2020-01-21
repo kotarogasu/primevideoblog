@@ -1,3 +1,56 @@
+.header{
+  height: 110px;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+    &-title{
+      margin: 0 30px;
+      line-height: 110px;
+    } 
+  .title-text{
+    text-decoration: none;
+    font-size: 50px;
+    font-family: 'Permanent+Marker', serif;
+    color: gray;
+    text-shadow: 3px 1px 2px powderblue;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;  
+  }
+  .title-text:hover {
+    color: #fff;
+  }
+  .header-nav{
+    display: flex;
+    justify-content: flex-end;
+    height: 150px;
+    width: calc(100% - 500px);
+    .nav-item{
+      font-size:30px;
+      font-family: 'Permanent+Marker', serif;
+      line-height: 120px;
+      margin: 0px 20px;
+    }
+    .nav-text{
+      text-decoration: none;
+      cursor: pointer;
+      color: gray;
+      transition: all 0.3s ease 0s;  
+    }
+    .nav-text:hover{
+      color: #fff;
+    }
+    .nickname-text{
+      font-size:20px;
+      line-height: 120px;
+      margin: 0 20px 0 50px;
+      font-family: 'Permanent+Marker', serif;
+      color: gray;
+    }
+  }
+}
+
 .main-image{
   position: relative;
 }
@@ -111,7 +164,7 @@
     margin-bottom: 30px
   }
 
-  .thumbnails{
+  .card-area{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -119,7 +172,7 @@
     margin-right: 10px;
     margin-bottom: 40px;
   }
-  .thumbnail{
+  .product-card{
     height: 240px;
     width: 310px;
     position: relative;

@@ -1,7 +1,7 @@
 .post-content
   .posts-title 投稿一覧
-  .thumbnails
+  .card-area
     - @products.each do |products|
-      .thumbnail
+      .product-card
         .content-post{:style => "background-image: url(#{products.image});"}
           = link_to  '詳', "/products/#{products.id}", method: :get, class:"content-post__link"
