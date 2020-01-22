@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     collection do
       get :category_find
       get :search
+      get :tag_search
+      get :tags_index
     end
     member do
       get :category_show

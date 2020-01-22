@@ -22,11 +22,12 @@ $(document).ready(function(){
     maxSlides: 5,         // 一度に表示させる最大
     minSlides: 1,
     responsive: true,
-    slideMargin: 10, 
+    // slideMargin: 10, 
     slideWidth: 300,      // 各スライドの幅
     touchEnabled:false,  //リンク対策
 	  randomStart: false,    // 最初に表示するスライドをランダムに設定
     infiniteLoop:false,   //ループしない
     hideControlOnEnd:true, //次にスライドがない場合矢印が消える
+    adaptiveHeight:false,
   }); 
 });

@@ -1,0 +1,10 @@
+.back-ground
+  .title-box
+    .badge2.badge-primary.mr-1.p-2=@tag
+    %span  
+      とタグ付された投稿一覧
+  .post-content
+    = render partial: "product-card", locals:{products:@products}
+
+
+          

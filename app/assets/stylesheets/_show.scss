@@ -5,24 +5,22 @@
   background-color: #444;
   box-shadow: 0 3px 6px #ccc;
   position: fixed;
+  background-image: url("917.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
   .video-product {
     width: 100%;
     height: 100%;
     display: flex;
     position: relative;
-    .video-image {
-      height: 550px;
-      width:500px;
-      margin-top: 8%;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      border-radius: 5px 5px 0 0;
-      margin-left: 30px; 
+    &-image {
+      margin-top: 5%;
+      margin-left: 60px; 
     }
+  }
     .more{
-      margin-left: 40px;
-      margin-top: 13%;
+      margin-left: 80px;
+      margin-top: 6%;
       max-width: 800px;
       .product-name {
         font-size: 120%;
@@ -40,7 +38,7 @@
         color: aliceblue;
       }
       .video-text{
-        padding: 20px;
+        padding: 10px;
         font-size:100%;
         color: aliceblue;
       }
@@ -48,37 +46,79 @@
         display: flex;
         justify-content: flex-end;
         position: absolute;
-        bottom: 120px;
-        right: 50px;
-        .video-btn__edit {
-          font-size: 200%;
+        bottom: 190px;
+        right: 80px;
+        margin-right: 60px;
+        .video-btn{
+          font-size: 25px;
           margin: 5px;
           padding: 5px;
           border-radius: 5px;
           border: 1px solid #08f;
-          color: #08f;
-          width: 100px;
+          color: white;
+          width: 180px;
           text-align: center;
-        }
-        .video-btn__delete {
-          font-size: 200%;
-          margin: 5px;
-          padding: 5px;
-          border-radius: 5px;
-          border: 1px solid #08f;
-          color: #08f;
-          width: 100px;
-          text-align: center;
-        }
-        .video-btn__link {
-          font-size: 200%;
-          margin: 5px;
-          padding: 5px;
-          border-radius: 5px;
-          border: 1px solid #08f;
-          color: #08f;
+          background-color: deepskyblue;
+          text-decoration: none;
+          cursor: pointer;
+          transition-duration: 0.5s;
+          &:hover{
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+            transform: translateY(-5px);
+            transition-duration: 0.5s;
+          }
         }
       }
     }
+  .tags-box{
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
   }
+  .review-text{
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+  }
+  .badge {
+    display: inline-block;
+    margin-left: 5px;
+    min-width: 10px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: brown;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+    .tag-text{
+      text-decoration: none;
+      color: #fff;
+      font-size: 20px;
+      transition: all 0.3s ease 0s; 
+      padding: 5px 5px;
+    }
+    .badge:hover{
+      box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+      transform: translateY(-2px);
+      transition-duration: 0.5s;
+    }
+}
+.badge2{
+  padding: 5px;
+  display: inline-block;
+  margin-left: 5px;
+  min-width: 10px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 10px;
+  background-color: brown;
+  color: #fff;
+  font-size: 23px;
 }

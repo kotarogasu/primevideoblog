@@ -1,7 +1,7 @@
-.post-content
-  .posts-title 投稿一覧
-  .card-area
-    - @products.each do |products|
-      .product-card
-        .content-post{:style => "background-image: url(#{products.image});"}
-          = link_to  '詳', "/products/#{products.id}", method: :get, class:"content-post__link"
+.back-ground
+  .title-box
+    #{@nickname} の投稿一覧
+  .post-content
+    = render partial: "products/product-card", locals:{products:@products}
+
+  

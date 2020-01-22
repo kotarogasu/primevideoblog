@@ -1,6 +1,7 @@
 .video-content
   .video-product
-    .video-image{:style => "background-image: url(#{@product.image});"}
+    .video-product-image
+      = image_tag @product.image, height: '450', width: '450'
     .more
       %a{:href => "/users/#{@product.user.id}"}
         %p.product-name
@@ -8,14 +9,15 @@
       %p.product-date= (@product.updated_at.strftime("%Y/%m/%d %H:%M"))
       %p.video-title= (@product.title)
       .tags-box
+        タグ
         - @tag.each do |tag|
-          %span.badge.badge-primary.mr-1.p-2= tag
-      
+          %span.badge.badge-primary.mr-1.p-2
+            = link_to tag, tags_index_products_path(tag_name: tag), class: "tag-text"
       .review-text
         レビュー
       %p.video-text= (@product.text)
       .video-under
         - if user_signed_in? && current_user.id == @product.user_id
-          = link_to  'edit', "/products/#{@product.id}/edit", method: :get, class:"video-btn__edit"
-          = link_to  'delete', "/products/#{@product.id}", method: :delete, class:"video-btn__delete"
-        = link_to  'Primevideoへ', url=@product.link, class:"video-btn__link"
+          = link_to  'edit', "/products/#{@product.id}/edit", method: :get, class:"video-btn"
+          = link_to  'delete', "/products/#{@product.id}", method: :delete, class:"video-btn"
+        = link_to  'Primevideoへ', url=@product.link, target: :_blank, class:"video-btn"

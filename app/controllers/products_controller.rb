@@ -1,9 +1,11 @@
 class ProductsController < ApplicationController
+
   before_action :set_product, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
   before_action :category_type, only:[:index, :category_show]
   
   def index
+    @toptags = ActsAsTaggableOn::Tag.most_used(5)
   end
 
   def category_show
@@ -15,7 +17,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path, notice: '投稿に成功しました'
+    else
+      flash.now[:alert] = '投稿に失敗しました'
+      render :new
+    end
   end
 
   def category_find
@@ -27,6 +35,20 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @tag = @product.tag_list
+  end
+
+  def tags_index
+    @product = Product.all
+    @tag = params[:tag_name]
+      if params[:tag_name]
+        @products = @product.tagged_with("#{params[:tag_name]}")
+      end
+  end
+
+  def tag_search
+    # @tags = Product.tag_counts_on(:tags).order('count DESC')
+    @tags = ActsAsTaggableOn::Tag.most_used
   end
 
   def destroy
@@ -38,8 +60,14 @@ class ProductsController < ApplicationController
   end
 
   def update
-    product = Product.find(params[:id])
-    product.update(product_params)
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    if @product.save
+      redirect_to root_path, notice: '投稿に成功しました'
+    else
+      flash.now[:alert] = '投稿に失敗しました'
+      render :new
+    end
   end
 
   def search
@@ -48,7 +76,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :image, :text, :link, :category_id).merge(user_id: current_user.id)
+    params.require(:product).permit(:title, :image, :text, :link, :category_id, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_product
@@ -56,19 +84,19 @@ class ProductsController < ApplicationController
   end
 
   def category_type
-    @action = Product.where(category_id:2)
-    @sf = Product.where(category_id:3)
-    @comedy = Product.where(category_id:4)
-    @human = Product.where(category_id:5).or(Product.where(category_id:9))
-    @fantasy = Product.where(category_id:6)
-    @lovestory = Product.where(category_id:7)
-    @horror = Product.where(category_id:8)
-    @musical= Product.where(category_id:10)
-    @war = Product.where(category_id:11)
-    @documentary = Product.where(category_id:12)
-    @jmovie = Product.where(category_id:13)
-    @kmovie = Product.where(category_id:14)
-    @etc = Product.where(category_id:15)
+    @action = Product.where(category_id:2).recent10
+    @sf = Product.where(category_id:3).recent10
+    @comedy = Product.where(category_id:4).recent10
+    @human = Product.where(category_id:5).or(Product.where(category_id:9)).recent10
+    @fantasy = Product.where(category_id:6).recent10
+    @lovestory = Product.where(category_id:7).recent10
+    @horror = Product.where(category_id:8).recent10
+    @musical= Product.where(category_id:10).recent10
+    @war = Product.where(category_id:11).recent10
+    @documentary = Product.where(category_id:12).recent10
+    @jmovie = Product.where(category_id:13).recent10
+    @kmovie = Product.where(category_id:14).recent10
+    @etc = Product.where(category_id:15).recent10
   end
 
   def move_to_index

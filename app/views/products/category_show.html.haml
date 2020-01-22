@@ -6,24 +6,46 @@
         アクション・アドベンチャー
         = render partial: "product-card", locals: {products: @action}
     - when current_page?(category_show_product_path(2))
+      .category-show
+        SF映画
       = render partial: "product-card", locals: {products: @sf}
     - when current_page?(category_show_product_path(3))
+      .category-show
+        コメディ
       = render partial: "product-card", locals: {products: @comedy}
     - when current_page?(category_show_product_path(4))
+      .category-show
+        ヒューマン・ドラマ
       = render partial: "product-card", locals: {products: @human}
     - when current_page?(category_show_product_path(5))
+      .category-show
+        ファンタジー
       = render partial: "product-card", locals: {products: @fantasy}
     - when current_page?(category_show_product_path(6))
+      .category-show
+        ラブストーリー
       = render partial: "product-card", locals: {products: @lovestory}
     - when current_page?(category_show_product_path(7))
+      .category-show
+        ホラー・サスペンス
       = render partial: "product-card", locals: {products: @horror}
     - when current_page?(category_show_product_path(8))
+      .category-show
+        ミュージカル
       = render partial: "product-card", locals: {products: @musical}
     - when current_page?(category_show_product_path(9))
+      .category-show
+        戦争
       = render partial: "product-card", locals: {products: @war}
     - when current_page?(category_show_product_path(10))
+      .category-show
+        邦画
       = render partial: "product-card", locals: {products: @jmovie}
     - when current_page?(category_show_product_path(11))
+      .category-show
+        韓国映画
       = render partial: "product-card", locals: {products: @kmovie}
     - when current_page?(category_show_product_path(12))
+      .category-show
+        その他
       = render partial: "product-card", locals: {products: @etc}

@@ -1,0 +1,9 @@
+.video-content
+  .tag-title
+    タグ一覧
+  .tag-area
+    - tag_cloud(@tags,"") do |tag|
+      .tag-label
+        = link_to tag.name, tags_index_products_path(tag_name: tag.name), class: "tag-text2"
+
+    

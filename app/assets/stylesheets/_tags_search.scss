@@ -1,0 +1,39 @@
+.tag-title{
+  text-align: center;
+  padding:10px;
+  font-size: 40px;
+  color: whitesmoke;
+}
+.tag-area{
+  line-height: 50vh;
+  padding: 30px 35px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: flex-start;
+}
+.tag-label{
+  margin: 13px 7px;
+  min-width: 10px;
+  display:inline-block;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: brown;
+  border-radius: 10px;
+  padding: 5px 5px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  &:hover{
+    box-shadow: 5px 5px 5px #bbbbbb;
+    transform: translateY(-3px);
+    transition-duration: 0.2s;
+  }
+}
+
+.tag-text2{
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+}

@@ -18,6 +18,9 @@
   font-size: 20px;
   color: aliceblue;
 }
+.form-group{
+  margin-left: 20px;
+}
 
 .name-form{
   padding-bottom: 20px;
@@ -99,23 +102,27 @@
   display: block;
 }
 .sdn-btn{
-  margin:0 0 10px;
-  background-position: 10px;
-  border: 2px solid #1B73BA;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  color: #1B73BA;
   cursor: pointer;
-  font-size: 14px;
-  transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -webkit-transition: 0.2s ease-in-out;
-  height: 40px;
-  width: 150px;
+  font-size: 1.2em;
+  border: none;
+  background: #3879D9;
+  border: 1px solid #3879D9;
+  border-radius: 3px;
+  color: #fff;
+  outline : none;
+  padding: 9px;
+  line-height:1;
+  height: 1.9em;
+  display: inline-block;
+  vertical-align: middle;
+  transition-duration: 0.5s;
   margin-top: 160px;
   margin-left: 100px;
+  &:hover{
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    transform: translateY(-5px);
+    transition-duration: 0.5s;
+  }
 }
 .label-name{
   color: aliceblue;
@@ -131,4 +138,14 @@
 .select-default{
   height: 34px;
   width: 350px;
+}
+
+.error-text {
+  text-align: center;
+  color: red;
+  line-height: 1.5;
+  font-size: 14px;
+  li{
+  
+  }
 }
