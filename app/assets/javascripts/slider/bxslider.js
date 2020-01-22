@@ -20,14 +20,13 @@ $(document).ready(function(){
     moveSlides: 1,        // 移動するスライド数
     pause: 3500,          // 自動スライドの待ち時間
     maxSlides: 5,         // 一度に表示させる最大
-    minSlides: 1,
+    minSlides: 0,
     responsive: true,
-    slideMargin: 0, 
-    slideWidth: 290,      // 各スライドの幅
+    slideMargin: 10, 
+    slideWidth: 300,      // 各スライドの幅
     touchEnabled:false,  //リンク対策
 	  randomStart: false,    // 最初に表示するスライドをランダムに設定
     infiniteLoop:false,   //ループしない
     hideControlOnEnd:true, //次にスライドがない場合矢印が消える
-    adaptiveHeight:false,
   }); 
 });

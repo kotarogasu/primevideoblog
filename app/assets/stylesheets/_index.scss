@@ -1,6 +1,6 @@
 .header{
   height: 90px;
-  width: 100vw;
+  width: 100%;
   background-color: black;
   padding: 10px;
   display: flex;
@@ -44,7 +44,7 @@
     .nickname-text{
       font-size:20px;
       line-height: 120px;
-      margin: 0 40px 0 50px;
+      margin: 0 20px 0 50px;
       font-family: 'Permanent+Marker', serif;
       color: gray;
     }
@@ -60,7 +60,6 @@
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border: none !important;;
-  
 }
 .bx-pager{
   z-index: 2;
@@ -68,7 +67,6 @@
 }
 .bx-viewport{
   background-color: black;
-
 }
 .slider-img{
   width: 100% !important;
@@ -118,8 +116,7 @@
 .post-content{
   background-color: black;
   padding-bottom: 10px;
-  width: 100vw;
-  
+
   .search-form{
    text-align: center;
    position: sticky;
@@ -234,6 +231,7 @@
     }
   }
     
+
   .posts-title{
     background:#000;
     color:#fff;
@@ -245,7 +243,7 @@
     text-shadow: 0 0 5px;
     text-align: center; 
     padding:10px;
-    margin-bottom: 30px;
+    margin-bottom: 30px
   }
 
   .card-area{
@@ -258,9 +256,9 @@
   }
   .product-card{
     height: 280px;
-    width: 260px;
+    width: 310px;
     position: relative;
-    margin: 10px 20px;
+    margin: 5px -10px;
   }
     .content-post{
       background-color: #ccc;
@@ -288,7 +286,7 @@
     .nickname-text{
       color: #fff;
       position: absolute;
-      bottom: 10px;
+      bottom: 5px;
       right: 50%;
       font-size: 15px;
       width: 150px;
@@ -297,14 +295,15 @@
   .category-name{
     display: block;
     transition: .3s;
-    -webkit-transform: scale(1);
-    transform: scale(1);
     margin-bottom: 10px;
     margin-top: 20px;
+    transition-duration: 0.3s;
   }
   .category-name:hover{
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    transform: translateY(-5px);
+    transition-duration: 0.5s;
   }
   .category-show{
     font-style: oblique;
@@ -317,7 +316,6 @@
   .product-img{
     width: 260px;
     height: 250px;
-
   }
 }
 .result-back{

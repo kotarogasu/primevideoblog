@@ -22,7 +22,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path, notice: '投稿に成功しました'
+        if @product[:category_id] <= 13  
+          redirect_to root_path, notice: '投稿に成功しました'
+        else @product[:category_id] <= 14
+          redirect_to index_tv_products_path, notice: '投稿に成功しました'
+        end
     else
       flash.now[:alert] = '投稿に失敗しました'
       render :new
