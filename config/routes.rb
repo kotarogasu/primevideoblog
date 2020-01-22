@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'products#index'
   resources :products do
     collection do
+      get :index_tv
       get :category_find
       get :search
       get :tag_search

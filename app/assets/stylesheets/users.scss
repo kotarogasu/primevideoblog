@@ -5,8 +5,11 @@
 .sign-up__contents{
   height: 100vh;
   width: 100vw;
+  padding-left: 50px;
   color: white;
-  background-color: #444;
+  background-image: url("amazon.png");
+  background-repeat: no-repeat;
+  background-size:cover;
   position: fixed;
 }
 .sign-up__text{
@@ -46,9 +49,11 @@
   min-height: 10rem;
   margin:auto;
   max-width: 50%;
-  padding: .5rem;
+  padding-top:60px;
   background-color: #444;
   width: 100vw;
+  height: 100vh;
+
   
 }
 .login-text {

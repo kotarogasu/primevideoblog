@@ -1,13 +1,14 @@
-.post-content
-  .posts-title 投稿一覧
-  = form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form|
-    = form.text_field :keyword, placeholder: "作品を検索する", class: "search-input"
-    = form.submit value: "検索", class: "search-btn"
-  .card-area
-    - @products.each do |product|
-      .product-card
-        .content-post{:style => "background-image: url(#{product.image});"}
-          = link_to  '詳', "/products/#{product.id}", method: :get, class:"content-post__link"
-        %a{:href => "/users/#{product.user.id}"}
-          .nickname-text
-            投稿者：#{product.user.nickname}
+.result-back
+  .post-content
+    .posts-title 投稿一覧
+    = form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "作品名、キーワード", class: "search-input"
+      = form.submit value: "検索", class: "search-btn"
+    .card-area
+      - @products.each do |product|
+        .product-card
+          .content-post{:style => "background-image: url(#{product.image});"}
+            = link_to  '詳', "/products/#{product.id}", method: :get, class:"content-post__link"
+          %a{:href => "/users/#{product.user.id}"}
+            .nickname-text
+              投稿者：#{product.user.nickname}

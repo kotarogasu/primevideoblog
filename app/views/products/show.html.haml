@@ -12,7 +12,7 @@
         タグ
         - @tag.each do |tag|
           %span.badge.badge-primary.mr-1.p-2
-            = link_to tag, tags_index_products_path(tag_name: tag), class: "tag-text"
+            = link_to "＃#{tag}", tags_index_products_path(tag_name: tag), class: "tag-text"
       .review-text
         レビュー
       %p.video-text= (@product.text)

@@ -1,12 +1,19 @@
 .tag-title{
-  text-align: center;
-  padding:10px;
+  background:#000;
+  color:#fff;
   font-size: 40px;
-  color: whitesmoke;
+  width:100%;
+  border-top:13px dashed #fff;
+  border-bottom:13px dashed #fff;
+  box-shadow: 0 0 3px 8px #000,25px 20px 4px 2px rgba(0,0,0,0.2);
+  text-shadow: 0 0 5px;
+  text-align: center; 
+  padding:10px;
+  margin-bottom: 30px;
 }
 .tag-area{
   line-height: 50vh;
-  padding: 30px 35px;
+  padding:30px 200px 10px 260px;
   text-align: center;
   display: flex;
   flex-wrap: wrap; 

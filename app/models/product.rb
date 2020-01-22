@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
-  validates :title, presence: {message: "titleを入力してください"},length: {maximum: 20, message: "20字以内で入力してください"}
+  validates :title, presence: {message: "titleを入力してください"},length: {maximum: 50, message: "50字以内で入力してください"}
   validates :text, presence: {message: "レビューを入力してください"},length:{maximum: 700, message: "700字以内で入力してください"}
   validates :link, presence: {message: "urlを入力してください"}
   validates :image, presence: {message: "画像パスを入力してください"}
@@ -19,5 +19,6 @@ class Product < ApplicationRecord
     Product.where('text collate utf8_unicode_ci LIKE(?) OR title collate utf8_unicode_ci LIKE(?)', "%#{search}%", "%#{search}%" )
     #ひらがな、カタカなでも検索可能 
   end
+  
 
 end
