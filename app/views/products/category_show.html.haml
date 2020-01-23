@@ -1,76 +1,77 @@
 .category-shows
   .post-content
-    - case 
-    - when current_page?(category_show_product_path(1))
-      .category-title
-        アクション・アドベンチャー
-        = render partial: "product-card", locals: {products: @action}
-    - when current_page?(category_show_product_path(2))
-      .category-title
-        SF映画
-        = render partial: "product-card", locals: {products: @sf}
-    - when current_page?(category_show_product_path(3))
-      .category-title
-        コメディ
-        = render partial: "product-card", locals: {products: @comedy}
-    - when current_page?(category_show_product_path(4))
-      .category-title
-        ヒューマン・ドラマ
-        = render partial: "product-card", locals: {products: @human}
-    - when current_page?(category_show_product_path(5))
-      .category-title
-        ファンタジー
-        = render partial: "product-card", locals: {products: @fantasy}
-    - when current_page?(category_show_product_path(6))
-      .category-title
-        ラブストーリー
-        = render partial: "product-card", locals: {products: @lovestory}
-    - when current_page?(category_show_product_path(7))
-      .category-title
-        ホラー・サスペンス
-        = render partial: "product-card", locals: {products: @horror}
-    - when current_page?(category_show_product_path(8))
-      .category-title
-        ミュージカル
-        = render partial: "product-card", locals: {products: @musical}
-    - when current_page?(category_show_product_path(9))
-      .category-title
-        戦争
-        = render partial: "product-card", locals: {products: @war}
-    - when current_page?(category_show_product_path(10))
-      .category-title
-        邦画
-        = render partial: "product-card", locals: {products: @jmovie}
-    - when current_page?(category_show_product_path(11))
-      .category-title
-        韓国映画
-        = render partial: "product-card", locals: {products: @kmovie}
-    - when current_page?(category_show_product_path(12))
-      .category-title
-        その他
-        = render partial: "product-card", locals: {products: @metc}
-    - when current_page?(category_show_product_path(13))
-      .category-title
-        海外ドラマ
-        = render partial: "product-card", locals: {products: @wdrama}
-    - when current_page?(category_show_product_path(14))
-      .category-title
-        国内ドラマ
-        = render partial: "product-card", locals: {products: @drama}
-    - when current_page?(category_show_product_path(15))
-      .category-title
-        コメディ・お笑い
-        = render partial: "product-card", locals: {products: @tvcomedy}
-    - when current_page?(category_show_product_path(16))
-      .category-title
-        韓国ドラマ
-        = render partial: "product-card", locals: {products: @korea}
-    - when current_page?(category_show_product_path(17))
-      .category-title
-        アニメ
-        = render partial: "product-card", locals: {products: @anime}
-    - when current_page?(category_show_product_path(18))
-      .category-title
-        その他
-        = render partial: "product-card", locals: {products: @tvetc}
+    .post-content-users
+      - case 
+      - when current_page?(category_show_product_path(1))
+        .category-title
+          アクション・アドベンチャー
+          = render partial: "product-card", locals: {products: @action}
+      - when current_page?(category_show_product_path(2))
+        .category-title
+          SF映画
+          = render partial: "product-card", locals: {products: @sf}
+      - when current_page?(category_show_product_path(3))
+        .category-title
+          コメディ
+          = render partial: "product-card", locals: {products: @comedy}
+      - when current_page?(category_show_product_path(4))
+        .category-title
+          ヒューマン・ドラマ
+          = render partial: "product-card", locals: {products: @human}
+      - when current_page?(category_show_product_path(5))
+        .category-title
+          ファンタジー
+          = render partial: "product-card", locals: {products: @fantasy}
+      - when current_page?(category_show_product_path(6))
+        .category-title
+          ラブストーリー
+          = render partial: "product-card", locals: {products: @lovestory}
+      - when current_page?(category_show_product_path(7))
+        .category-title
+          ホラー・サスペンス
+          = render partial: "product-card", locals: {products: @horror}
+      - when current_page?(category_show_product_path(8))
+        .category-title
+          ミュージカル
+          = render partial: "product-card", locals: {products: @musical}
+      - when current_page?(category_show_product_path(9))
+        .category-title
+          戦争
+          = render partial: "product-card", locals: {products: @war}
+      - when current_page?(category_show_product_path(10))
+        .category-title
+          邦画
+          = render partial: "product-card", locals: {products: @jmovie}
+      - when current_page?(category_show_product_path(11))
+        .category-title
+          韓国映画
+          = render partial: "product-card", locals: {products: @kmovie}
+      - when current_page?(category_show_product_path(12))
+        .category-title
+          その他
+          = render partial: "product-card", locals: {products: @metc}
+      - when current_page?(category_show_product_path(13))
+        .category-title
+          海外ドラマ
+          = render partial: "product-card", locals: {products: @wdrama}
+      - when current_page?(category_show_product_path(14))
+        .category-title
+          国内ドラマ
+          = render partial: "product-card", locals: {products: @drama}
+      - when current_page?(category_show_product_path(15))
+        .category-title
+          コメディ・お笑い
+          = render partial: "product-card", locals: {products: @tvcomedy}
+      - when current_page?(category_show_product_path(16))
+        .category-title
+          韓国ドラマ
+          = render partial: "product-card", locals: {products: @korea}
+      - when current_page?(category_show_product_path(17))
+        .category-title
+          アニメ
+          = render partial: "product-card", locals: {products: @anime}
+      - when current_page?(category_show_product_path(18))
+        .category-title
+          その他
+          = render partial: "product-card", locals: {products: @tvetc}
 
