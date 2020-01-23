@@ -52,3 +52,6 @@ production:
   database: primevideo-serch_production
   username: primevideo-serch
   password: <%= ENV['PRIMEVIDEO-SERCH_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
