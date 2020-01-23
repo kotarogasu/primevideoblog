@@ -44,6 +44,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  mount_uploader :image, ImageUploader
+  mount_on :image, ImageUploader
   process resize_to_fit: [800, 800]
 end
