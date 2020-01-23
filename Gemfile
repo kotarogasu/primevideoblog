@@ -44,6 +44,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sprockets', '3.7.2'
   gem 'pry-rails'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -77,3 +78,6 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootstrap-sass'
 
 
+group :production do
+  gem 'pg'
+end
