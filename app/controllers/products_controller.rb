@@ -54,8 +54,8 @@ class ProductsController < ApplicationController
   end
 
   def tag_search
-    # @tags = Product.tag_counts_on(:tags).order('count DESC')
-    @tags = ActsAsTaggableOn::Tag.most_used
+    @tags = Product.tag_counts_on(:tags).order('count DESC')
+    # @tags = ActsAsTaggableOn::Tag.most_used
   end
 
   def destroy
