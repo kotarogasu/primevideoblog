@@ -1,6 +1,6 @@
 $(function(){
   function appendChildOptions(child){
-    var child_option =`<option value="${child.id}" class="child-option">${child.name}</option>`
+    var child_option ='<option value='+child.id+' class="child-option">'+child.name+'</option>' 
     $('#child-select').append(child_option);
   }
 
