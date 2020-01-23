@@ -18,7 +18,7 @@ $(function(){
     .done(function(children){
       $("#child-wrap").show();
       $('.child-option').remove();
-      $('#child-select').append(`<option value="" class="child-option">---</option>`);
+      $('#child-select').append('<option value="" class="child-option">---</option>');
       children.forEach(function(child){
         appendChildOptions(child)
       })
