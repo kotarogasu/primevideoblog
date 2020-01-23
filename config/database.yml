@@ -49,9 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: primevideo-serch_production
-  username: primevideo-serch
-  password: <%= ENV['PRIMEVIDEO-SERCH_DATABASE_PASSWORD'] %>
+  database: db/production.postgresql
+  username: primevideoblog
+  url: <%= ENV['DATABASE_URL'] %>
   adapter: postgresql
-  encoding: unicode
-  pool: 5

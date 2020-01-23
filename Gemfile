@@ -77,9 +77,5 @@ gem 'ancestry'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootstrap-sass'
 
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
+gem 'pg', group: :production
+gem 'mysql2', '0.5.2', group: [:development, :test]
