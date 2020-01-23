@@ -1,8 +1,10 @@
 !!!
 %html{:lang => "ja"}
   %head    
-
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"}
+    %link{:href => "//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css", :rel => "stylesheet"}/
+  %script{:src => "//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"}
     = javascript_include_tag 'application'
     / Required meta tags
     = csrf_meta_tags
