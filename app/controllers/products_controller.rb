@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :show,]
+  before_action :set_product, only: [:edit, :show, :update]
   before_action :category_type, only:[:index, :index_tv, :category_show]
   before_action :authenticate_user!, only: [:new]
   
