@@ -5,6 +5,6 @@
         .content-post{:style => "background-image: url(#{product.image})",class:"product-img"}
           = link_to  '#', "/products/#{product.id}", method: :get, class:"content-post__link"
         %a{:href => "/users/#{product.user.id}"}
-          .nickname-text
+          .nickname-text2
             投稿者：#{product.user.nickname}
             

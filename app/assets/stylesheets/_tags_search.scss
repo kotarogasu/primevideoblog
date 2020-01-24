@@ -11,9 +11,34 @@
   padding:10px;
   margin-bottom: 30px;
 }
+.choice-btn2{
+  border: none;
+  background-color: darkolivegreen;
+  border: 1px solid darkolivegreen;
+  border-radius: 3px;
+  outline : none;
+  padding: 6px;
+  line-height:1.3;
+  height: 1.3em;
+  display: inline-block;
+  vertical-align: middle;
+  transition-duration: 0.5s;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  &:hover{
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    transform: translateY(-5px);
+    transition-duration: 0.5s;
+  }
+}
+.choice-area2{
+  margin-left: 60px;
+}
+
 .tag-area{
   line-height: 50vh;
-  padding:30px 200px 10px 260px;
+  padding:30px 150px 120px 190px;
   text-align: center;
   display: flex;
   flex-wrap: wrap; 
@@ -43,8 +68,4 @@
   text-decoration: none;
   color: #fff;
   font-size: 30px;
-}
-.tag-under{
-  width: 100%;
-  height: 30px;
 }

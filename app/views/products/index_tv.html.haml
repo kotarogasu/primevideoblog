@@ -38,7 +38,7 @@
       = form.text_field :keyword, placeholder: "作品名、キーワード", class: "search-input"
       = form.submit value: "キーワード検索", class: "search-btn"
       %span.tag-search
-        = link_to "タグ一覧検索", tag_search_products_path, class:"tag-search-btn"
+        = link_to "タグ一覧検索", tag_search_product_path(1), class:"tag-search-btn"
       %span.like-tag よく使われるタグ
       - tag_cloud(@toptags,"") do |tag|
         %span.like-tag-list

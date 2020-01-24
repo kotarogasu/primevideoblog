@@ -116,7 +116,7 @@
 .post-content{
   background-color: black;
   padding-bottom: 10px;
-
+  overflow: auto;
   .search-form{
    text-align: center;
    position: sticky;
@@ -283,14 +283,27 @@
     .content-post:hover{
       transform: scale(1.1);
     }
-    .nickname-text{
+    .nickname-text2{
       color: #fff;
       position: absolute;
       bottom: 5px;
       right: 50%;
       font-size: 15px;
-      width: 150px;
-      height: 20px;
+      display:inline-block;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      background-color: brown;
+      border-radius: 10px;
+      padding: 2px; 
+      cursor: pointer;
+      transition-duration: 0.3s;
+      &:hover{
+        box-shadow: 5px 5px 5px #ccc;
+        transform: translateY(-3px);
+        transition-duration: 0.2s;
+      }
       }
   .category-name{
     display: block;

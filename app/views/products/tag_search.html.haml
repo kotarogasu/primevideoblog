@@ -1,10 +1,7 @@
-.video-content
-  .tag-title
-    タグ一覧
-  .tag-area
-    - tag_cloud(@tags,"") do |tag|
-      .tag-label
-        = link_to "＃#{tag.name}", tags_index_products_path(tag_name: tag.name), class: "tag-text2"
-  .tag-under
-
-    
+- case 
+- when current_page?(tag_search_product_path(1))
+  = render partial: "tag_choice", locals: {tags: @tags}
+- when current_page?(tag_search_product_path(2))
+  = render partial: "tag_choice", locals: {tags: @movie_tags}
+- when current_page?(tag_search_product_path(3))
+  = render partial: "tag_choice", locals: {tags: @tv_tags}

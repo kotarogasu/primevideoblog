@@ -1,8 +1,7 @@
 class ProductsController < ApplicationController
-
-  before_action :set_product, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :set_product, only: [:edit, :show,]
   before_action :category_type, only:[:index, :index_tv, :category_show]
+  before_action :authenticate_user!, only: [:new]
   
   def index
     @toptags = ActsAsTaggableOn::Tag.most_used(4)
@@ -24,7 +23,7 @@ class ProductsController < ApplicationController
     if @product.save
         if @product[:category_id] <= 13  
           redirect_to root_path, notice: '投稿に成功しました'
-        else @product[:category_id] <= 14
+        else @product[:category_id] >= 14
           redirect_to index_tv_products_path, notice: '投稿に成功しました'
         end
     else
@@ -54,10 +53,14 @@ class ProductsController < ApplicationController
   end
 
   def tag_search
+    @tag = ActsAsTaggableOn::Tag.find(params[:id])
     @tags = Product.tag_counts_on(:tags).order('count DESC')
-    # @tags = ActsAsTaggableOn::Tag.most_used
+    @movie = Product.where(category_id: 1..13) 
+    @movie_tags = @movie.tag_counts_on(:tags).order('count DESC')
+    @tv = Product.where(category_id: 14..20)  
+    @tv_tags = @tv.tag_counts_on(:tags).order('count DESC')
   end
-
+    
   def destroy
     product = Product.find(params[:id])
     product.destroy
@@ -67,7 +70,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
     @product.update(product_params)
     if @product.save
       redirect_to root_path, notice: '投稿に成功しました'
@@ -110,10 +112,6 @@ class ProductsController < ApplicationController
     @anime = Product.where(category_id:19).recent10
     @tvetc = Product.where(category_id:20).recent10
 
-  end
-
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
   end
   
 end
