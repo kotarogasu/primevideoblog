@@ -16,7 +16,7 @@ class Product < ApplicationRecord
 
   def self.search(search)
     return Product.all unless search
-    Product.where('text collate utf8_unicode_ci LIKE(?) OR title collate utf8_unicode_ci LIKE(?)', "%#{search}%", "%#{search}%" )
+    Product.where('text LIKE(?) OR title LIKE(?)', "%#{search}%", "%#{search}%" )
     #ひらがな、カタカなでも検索可能 
   end
   
