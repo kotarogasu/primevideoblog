@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
     member do
       get :index
+      get :details
       get :category_show
       get :tag_search
     end

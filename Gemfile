@@ -76,6 +76,9 @@ gem 'haml-rails'
 gem 'ancestry'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootstrap-sass'
+gem 'nokogiri'
+
+
 
 gem 'pg', group: :production
 gem 'mysql2', '0.5.2', group: [:development, :test]

@@ -4,7 +4,7 @@
       - products.first(10).each do |product|
         .product-card
           .content-post{:style => "background-image: url(#{product.image})",class:"product-img"}
-            = link_to  '#', "/products/#{product.id}", method: :get, class:"content-post__link"
+            = link_to  '#', details_product_path(product.id), method: :get, class:"content-post__link"
           %a{:href => "/users/#{product.user.id}"}
             .nickname-text2
               投稿者：#{product.user.nickname}
@@ -14,7 +14,7 @@
       - products.each do |product|
         .product-card
           .content-post{:style => "background-image: url(#{product.image})",class:"product-img"}
-            = link_to  '#', "/products/#{product.id}", method: :get, class:"content-post__link"
+            = link_to  '#', details_product_path(product.id), method: :get, class:"content-post__link"
           %a{:href => "/users/#{product.user.id}"}
             .nickname-text2
               投稿者：#{product.user.nickname}

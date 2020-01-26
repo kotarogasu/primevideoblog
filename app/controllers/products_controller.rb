@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :show, :update]
+  before_action :set_product, only: [:edit, :details, :update]
   # before_action :category_type, only:[:index, :category_show]
   before_action :authenticate_user!, only: [:post]
-  
+
   def post
     @product = Product.new
   end
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
         if @product[:category_id] <= 13  
           redirect_to root_path, notice: '投稿に成功しました'
         else @product[:category_id] >= 14
-          redirect_to index_product_path(14), notice: '投稿に成功しました'
+          redirect_to product_path(14), notice: '投稿に成功しました'
         end
     else
       flash.now[:alert] = '投稿に失敗しました'
@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
+  def details
     @tag = @product.tag_list
   end
 
@@ -88,10 +88,14 @@ class ProductsController < ApplicationController
   def update
     @product.update(product_params)
     if @product.save
-      redirect_to root_path, notice: '投稿に成功しました'
+      if @product[:category_id] <= 13  
+        redirect_to root_path, notice: '投稿に成功しました'
+      else @product[:category_id] >= 14
+        redirect_to product_path(14), notice: '投稿に成功しました'
+      end
     else
       flash.now[:alert] = '投稿に失敗しました'
-      render :post
+      render :edit
     end
   end
 

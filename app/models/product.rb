@@ -29,5 +29,7 @@ class Product < ApplicationRecord
       #ひらがな、カタカなでも検索可能 
     end
   end
-
+  
 end
+
+
