@@ -25,7 +25,7 @@ $(function(){
     });
   });
 
-  if(window.location.href.match(/\/products\/new/)){
+  if(window.location.href.match(/\/products\/post/)){
     // 商品の出品ページ用js
     $("#child-wrap").hide();
     

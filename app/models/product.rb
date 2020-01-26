@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 
   acts_as_taggable
 
-  scope :recent10, -> { order(created_at: :desc).limit(10)}
+  scope :recent10, -> { order(created_at: :desc).limit(3)}
 
   if Rails.env.development? 
     def self.search(search)

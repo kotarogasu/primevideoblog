@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'products#index'
+  root  'products#index'
   resources :products do
     collection do
-      get :index_tv
+      get :post
       get :category_find
       get :search
       get :tags_index
-      # get :
     end
     member do
+      get :index
       get :category_show
       get :tag_search
     end
