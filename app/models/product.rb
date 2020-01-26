@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validates :title, presence: {message: "titleを入力してください"},length: {maximum: 40, message: "40字以内で入力してください"}
-  validates :text, presence: {message: "レビューを入力してください"},length:{maximum: 450, message: "450字以内で入力してください"}
+  validates :text, presence: {message: "レビューを入力してください"},length:{maximum: 500, message: "500字以内で入力してください"}
   validates :link, presence: {message: "urlを入力してください"}
   validates :image, presence: {message: "画像パスを入力してください"}
   validates :category_id, presence: {message: "ジャンルを選んでください"}
