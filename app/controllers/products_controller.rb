@@ -3,6 +3,9 @@ class ProductsController < ApplicationController
   # before_action :category_type, only:[:index, :category_show]
   before_action :authenticate_user!, only: [:post]
 
+  require 'open-uri' #URLにアクセスする為のライブラリを読み込みます。
+  require 'nokogiri' #Nokogiriライブラリを読み込みます。
+
   def post
     @product = Product.new
   end
@@ -105,7 +108,24 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :image, :text, :link, :category_id, :tag_list).merge(user_id: current_user.id)
+    url = params.require(:product)[:link] #切り出すURLを指定します。
+    charset = nil
+    html = open(url) do |f|
+      charset = f.charset #文字種別を取得します。
+      f.read #htmlを読み込み変数htmlに渡します。
+    end
+    doc = Nokogiri::HTML.parse(html, nil, charset) #htmlを解析し、オブジェクト化
+    title = doc.css("._2Q73m9._2Q73m9._2Q73m9")
+    img = doc.css(".av-page-desktop ._2a7NJV._2a7NJV._2a7NJV img")[0][:srcset]
+    params.require(:product)[:title] = title.text
+    params.require(:product)[:image] = img
+    doc.css('#meta-info ._33ixDQ').each do|acter|
+      params.require(:product)[:acter] = acter.text
+    end
+    doc.css("#btf-product-details ._33ixDQ").each do|acter2|
+      params.require(:product)[:acter] = acte2r.text
+    end
+   params.require(:product).permit(:title, :image, :text, :link, :category_id, :acter, :acter2, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_product

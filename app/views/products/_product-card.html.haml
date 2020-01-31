@@ -3,7 +3,7 @@
     .card-area
       - products.first(10).each do |product|
         .product-card
-          .content-post{:style => "background-image: url(#{product.image})",class:"product-img"}
+          .content-post{:style => "background-image: url(#{product.image})",srcset:"middle.jpg 1x,large.jpg 2x" ,class:"product-img"}
             = link_to  '#', details_product_path(product.id), method: :get, class:"content-post__link"
           %a{:href => "/users/#{product.user.id}"}
             .nickname-text2
