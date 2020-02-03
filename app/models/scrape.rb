@@ -1,7 +1,7 @@
 require 'open-uri' #URLにアクセスする為のライブラリを読み込みます。
 require 'nokogiri' #Nokogiriライブラリを読み込みます。
 
-url = 'https://www.amazon.co.jp/gp/video/detail/B07VBY9TJ7/ref=atv_hm_hom_1_c_ws5uSS_2_2'#切り出すURLを指定します。
+url = 'https://www.amazon.co.jp/gp/video/detail/B00OSYDK5Q/ref=atv_hm_hom_1_c_ws5uSS_2_7'#切り出すURLを指定します。
 
 charset = nil
 html = open(url) do |f|
@@ -13,23 +13,23 @@ doc = Nokogiri::HTML.parse(html, nil, charset) #htmlを解析し、オブジェ�
 title = doc.css("._2Q73m9._2Q73m9._2Q73m9")
 img = doc.css(".av-page-desktop ._2a7NJV img")[0][:src]
 # (".av-page-desktop ._2a7NJV._2a7NJV._2a7NJV ")
-# acter = doc.css("#meta-info ._33ixDQ")
-# acter2 = doc.css("#btf-product-details ._33ixDQ")
+acter = doc.css("._33ixDQ")
+acter2 = doc.css("#btf-product-details ._33ixDQ")
 # trailer = doc.css('a')[0][:href]
 
-doc.css('#meta-info ._33ixDQ').each do|acter|
-  puts acter.text
-end
-doc.css("#btf-product-details ._33ixDQ").each do|acter2|
-  puts acter2.text
-end
+# doc.css('#meta-info ._33ixDQ').each do|acter|
+#   puts acter.text
+# end
+# doc.css("#btf-product-details ._33ixDQ").each do|acter2|
+#   puts acter2.text
+# end
 # doc.css('._2vKtVw > a').each do |trailer|
 #   puts trailer.attribute("href")
 # end
 
 puts title.text
 puts img
-# puts acter.text
+puts acter.text
 # puts acter2.text
 
 

@@ -110,22 +110,22 @@ class ProductsController < ApplicationController
   def product_params
     url = params.require(:product)[:link] #切り出すURLを指定します。
     charset = nil
-    html = open(url) do |f|
-      charset = f.charset #文字種別を取得します。
-      f.read #htmlを読み込み変数htmlに渡します。
-    end
-    doc = Nokogiri::HTML.parse(html, nil, charset) #htmlを解析し、オブジェクト化
-    title = doc.css("._2Q73m9._2Q73m9._2Q73m9")
-    img = doc.css(".av-page-desktop ._2a7NJV._2a7NJV._2a7NJV img")[0][:srcset]
-    params.require(:product)[:title] = title.text
-    params.require(:product)[:image] = img
-    doc.css('#meta-info ._33ixDQ').each do|acter|
+    if url.present?
+      html = open(url) do |f|
+        charset = f.charset #文字種別を取得します。
+        f.read #htmlを読み込み変数htmlに渡します。
+      end
+      doc = Nokogiri::HTML.parse(html, nil, charset) #htmlを解析し、オブジェクト化
+      title = doc.css("._2Q73m9._2Q73m9._2Q73m9")
+      img = doc.css(".av-page-desktop ._2a7NJV._2a7NJV._2a7NJV img")[0][:src]
+      acter = doc.css("._33ixDQ")
+      # subacter = doc.css("#btf-product-details ._33ixDQ")
+      params.require(:product)[:title] = title.text
+      params.require(:product)[:image] = img
       params.require(:product)[:acter] = acter.text
+      # params.require(:product)[:subacter] = subacter.text
     end
-    doc.css("#btf-product-details ._33ixDQ").each do|acter2|
-      params.require(:product)[:acter] = acte2r.text
-    end
-   params.require(:product).permit(:title, :image, :text, :link, :category_id, :acter, :acter2, :tag_list).merge(user_id: current_user.id)
+    params.require(:product).permit(:title, :image, :text, :link, :category_id, :tag_list, :acter).merge(user_id: current_user.id)
   end
 
   def set_product
