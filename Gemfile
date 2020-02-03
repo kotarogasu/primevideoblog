@@ -77,7 +77,7 @@ gem 'ancestry'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootstrap-sass'
 gem 'nokogiri'
-
+gem 'ransack'
 
 
 gem 'pg', group: :production

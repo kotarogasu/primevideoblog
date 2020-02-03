@@ -8,7 +8,15 @@
         = link_to "TV番組", tag_search_product_path(3), class:"choice-btn2"
       %span
         = link_to "全部", tag_search_product_path(1), class:"choice-btn2"
+    -if current_page?(tag_search_product_path(1))
+      %span
+      = form_with(url: tag_search_product_path(4),local: true, method: :get, class: "search-tag-form") do |form|
+        = form.text_field :tag_name, placeholder: "タグワード", class: "search-tag-input"
+        = form.submit value: "検索", class: "search-tag-btn"
+    -if current_page?(tag_search_product_path(4))
+      %span
+      = form_with(url: tag_search_product_path(4),local: true, method: :get, class: "search-tag-form") do |form|
+        = form.text_field :tag_name, placeholder: "タグワード", class: "search-tag-input"
+        = form.submit value: "検索", class: "search-tag-btn"
   .tag-area
-    - tag_cloud(@tags,"") do |tag|
-      .tag-label
-        = link_to "＃#{tag.name}", tags_index_products_path(tag_name: tag.name), class: "tag-text2"
+    = render partial: "tag-card", locals:{tags:@tags}

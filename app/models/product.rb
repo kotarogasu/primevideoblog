@@ -16,6 +16,7 @@ class Product < ApplicationRecord
 
 
   acts_as_taggable
+  ActsAsTaggableOn.strict_case_match = true
 
   scope :recent10, -> { order(created_at: :desc).limit(3)}
 
@@ -34,8 +35,7 @@ class Product < ApplicationRecord
     
     end
   end
-  
-  Product.tagged_with([params[:search_tag]], :any => true)...
+
 
 end
 
