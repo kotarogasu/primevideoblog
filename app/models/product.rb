@@ -27,7 +27,6 @@ class Product < ApplicationRecord
       #ひらがな、カタカなでも検索可能 
     end
   end
-
   if Rails.env.production? 
     def self.search(search)
       return Product.all unless search
