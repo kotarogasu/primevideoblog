@@ -16,24 +16,24 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  // var w = $(window).width();
-  // var x = 480;
-  // if (w >= x) {var width = 300 }else {var width = 140};
-  $('.card-area').bxSlider({
-    speed: 500,          // スライドするスピード
-    moveSlides: 1,        // 移動するスライド数
-    pause: 3500,          // 自動スライドの待ち時間
-    maxSlides: 5,         // 一度に表示させる最大
-    minSlides: 2,
-    responsive: true,
-    pager:false,
-    // slideMargin: 5, 
-    slideWidth: 300,      // 各スライドの幅
-    touchEnabled:false,  //リンク対策
-	  randomStart: false,    // 最初に表示するスライドをランダムに設定
-    infiniteLoop:false,   //ループしない
-    hideControlOnEnd:true, //次にスライドがない場合矢印が消える
-  }); 
+  var w = $(window).width();
+  var x = 480;
+  if (w >= x) {var width = 300 }else { var width = 200};
+    $('.card-area').bxSlider({
+      speed: 500,          // スライドするスピード
+      moveSlides: 1,        // 移動するスライド数
+      pause: 3500,          // 自動スライドの待ち時間
+      maxSlides: 5,         // 一度に表示させる最大
+      minSlides: 2,
+      responsive: true,
+      pager:false,
+      slideMargin: 5, 
+      slideWidth: width,      // 各スライドの幅
+      touchEnabled:false,  //リンク対策
+      randomStart: false,    // 最初に表示するスライドをランダムに設定
+      infiniteLoop:false,   //ループしない
+      hideControlOnEnd:true, //次にスライドがない場合矢印が消える
+    }); 
 });
 
 // $(document).ready(function(){
