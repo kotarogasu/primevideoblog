@@ -52,10 +52,10 @@
       %span
         = link_to "#{choice.name}", product_path(choice.id), class:"choice-btn"
     = form.text_field :keyword, placeholder: "作品名、キーワード", class: "search-input"
-    = form.submit value: "キーワード検索", class: "search-btn"
+    = form.submit value: "キーワード検索", class: "search-btn",data:{disable_with:"送信中"}
     .search-area2 
       = form.text_field :keyword, placeholder: "作品名、キーワード", class: "search-input2"
-      = form.submit value: "キーワード検索", class: "search-btn2"
+      = form.submit value: "キーワード検索", class: "search-btn2",data:{disable_with:"送信中"}
     / レスポンシブ対応用form
     %span.tag-search
       = link_to "タグ一覧検索", tag_search_product_path(1), class:"tag-search-btn"

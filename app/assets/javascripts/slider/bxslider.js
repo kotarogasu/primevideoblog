@@ -18,7 +18,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   var w = $(window).width();
   var x = 480;
-  if (w >= x) {var width = 300 }else { var width = 200};
+  if (w >= x) {var width = 320 }else { var width = 200};
     $('.card-area').bxSlider({
       speed: 500,          // スライドするスピード
       moveSlides: 1,        // 移動するスライド数
@@ -27,7 +27,7 @@ $(document).ready(function(){
       minSlides: 2,
       responsive: true,
       pager:false,
-      slideMargin: 5, 
+      slideMargin: 1, 
       slideWidth: width,      // 各スライドの幅
       touchEnabled:false,  //リンク対策
       randomStart: false,    // 最初に表示するスライドをランダムに設定

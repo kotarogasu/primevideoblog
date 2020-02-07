@@ -16,27 +16,28 @@
     - product.errors[:tag_list].each do |message|
       %li= message
 = form_with(model: product, local: true) do |f|
-  .form-group.col-sm-4.col-md-offset-2
-    = f.label :作品URL, class:"label-name"
-    = f.text_field :link, class: "form-control", placeholder: "URLを貼ってください"
-  .form-group.col-sm-5
-    #category-wraps
-      = f.label :"ジャンルを選んでください", class:"label-name"
-      .select-wrap
-        = f.collection_select :category_id, Category.roots, :id, :name, {prompt: '---'}, class: "select-default", id: "category-select" 
-      .select-wrap#child-wrap
-        = f.select :category_id, {}, {}, class: "select-default", id: "child-select" do
-          - if product.category.present?
-            %option{value: "#{product.category.id}", class: "child-option"}
-              = product.category.name
-  .form-group.col-sm-4.col-md-offset-2
-    = f.label :レビュー, class:"label-name"
-    = f.text_area :text, class: "form-control", placeholder: "レビューを記入してください", rows: "12"
-  .form-group.col-sm-4
-    .label-name
-      タグ（タグ間は『,』で区切ってください。４つまで入力可)
-  .form-group.col-sm-5
-    .tag-box
-      = f.text_field :tag_list, value: product.tag_list.join(','), "data-role" => "tagsinput",  class: "form-control "
-  .form-group.col-sm-4.col-md-offset-1
-    = f.submit "SEND", class:"sdn-btn"
+  .row
+    .form-group.col-lg-6.col-lg-offset-1.col-sm-8.col-sm-offset-1.col-xs-8.col-xs-offset-1
+      = f.label :作品URL, class:"label-name"
+      = f.text_field :link, class: "form-control", placeholder: "URLを貼ってください"
+  .row
+    .form-group.col-lg-6.col-lg-offset-1.col-sm-8.col-sm-offset-1.col-xs-8.col-xs-offset-1
+      #category-wraps
+        = f.label :"ジャンルを選んでください", class:"label-name"
+        = f.collection_select :category_id, Category.roots, :id, :name, {prompt: '---'}, class: "form-control", id: "category-select" 
+        .select-wrap#child-wrap
+          = f.select :category_id, {}, {}, class: "form-control", id: "child-select" do
+            - if product.category.present?
+              %option{value: "#{product.category.id}", class: "child-option"}
+                = product.category.name
+  .row
+    .form-group.col-lg-5.col-lg-offset-1.col-sm-8.col-sm-offset-1.col-xs-9.col-xs-offset-1
+      = f.label :"タグ（タグ間は『,』で区切ってください。４つまで入力可)", class:"label-name"
+      = f.text_field :tag_list, value: product.tag_list.join(','), "data-role" => "tagsinput"
+  .row
+    .form-group.col-lg-6.col-lg-offset-1.col-sm-8.col-sm-offset-1.col-xs-8.col-xs-offset-1
+      = f.label :レビュー, class:"label-name"
+      = f.text_area :text, class: "form-control", placeholder: "レビューを記入してください", rows: "10"  
+  .row 
+    .form-group.col-lg-4.col-lg-offset-1.col-sm-6.col-sm-offset-1.col-xs-6.col-xs-offset-1
+      = f.submit "SEND", class:"sdn-btn"

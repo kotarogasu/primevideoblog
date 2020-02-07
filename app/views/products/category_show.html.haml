@@ -1,7 +1,7 @@
 .category-shows
+  .category-title
+    #{@cate_name}
   .post-content
     .post-content-users
-      .category-title
-        #{@cate_name}
-      = render partial: "product-card", locals: {products: @products}
+      = render partial: "product-card2", locals: {products: @products}
       

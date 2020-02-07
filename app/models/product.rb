@@ -11,8 +11,8 @@ class Product < ApplicationRecord
   
   belongs_to :user
   belongs_to :category, optional: true
-  has_many :acter_products
-  has_many :acters, through: :acter_products
+  has_many :tags, dependent: :destroy
+  has_many :tags, dependent: :destroy
 
 
   acts_as_taggable

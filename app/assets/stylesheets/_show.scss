@@ -1,87 +1,116 @@
-.video-content {
-  width: 100vw;
-  height:100vh;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px #ccc;
-  position: fixed;
-  background-image: url("kuro1.jpg");
-  background-repeat: no-repeat;
-  background-size:cover;
-  overflow: auto;
-  .video-product {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: relative;
-    &-image {
-      margin-top: 5%;
-      margin-left: 60px; 
+@media screen and (min-width: 481px){ 
+  .video-content {
+    width: 100vw;
+    height:100vh;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px #ccc;
+    position: fixed;
+    background-image: url("kuro1.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow: auto;
+    .video-product {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      &-image {
+        margin-top: 5%;
+        margin-left: 60px; 
+      }
+      &-sum{
+        height: 60%;
+        width: 100%;
+      }
     }
-  }
-    .more{
-      margin-left: 80px;
-      margin-top: 6%;
-      max-width: 800px;
-      .product-name {
-        font-size: 120%;
-        margin: 5px;
-        color: aliceblue
-      }
-      .product-date {
-        font-size: 120%;
-        margin: 5px;
-        color: aliceblue
-      }
-      .video-title {
-        font-size: 200%;
-        margin: 5px;
-        color: aliceblue;
-      }
-      .video-text{
-        padding: 10px;
-        font-size:100%;
-        color: aliceblue;
-        word-wrap: break-word;
-      }
-      .video-under {
-        display: flex;
-        justify-content: flex-end;
-        position: absolute;
-        bottom: 190px;
-        right: 80px;
-        margin-right: 60px;
-        .video-btn{
-          font-size: 25px;
+      .more{
+        margin-left: 80px;
+        margin-top: 6%;
+        max-width: 800px;
+        .product-name {
+          font-size: 120%;
           margin: 5px;
-          padding: 5px;
-          border-radius: 5px;
-          border: 1px solid #08f;
-          color: white;
-          width: 180px;
-          text-align: center;
-          background-color: deepskyblue;
-          text-decoration: none;
-          cursor: pointer;
-          transition-duration: 0.5s;
-          &:hover{
-            box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
-            transform: translateY(-5px);
+          color: aliceblue
+        }
+        .product-date {
+          font-size: 120%;
+          margin: 5px;
+          color: aliceblue
+        }
+        .video-title {
+          font-size: 200%;
+          margin: 5px;
+          color: aliceblue;
+        }
+        .video-text{
+          padding: 10px;
+          font-size:100%;
+          color: aliceblue;
+          word-wrap: break-word;
+        }
+        .video-under {
+          display: flex;
+          justify-content: flex-end;
+          
+          .video-btn{
+            font-size: 25px;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #08f;
+            color: white;
+            width: 180px;
+            text-align: center;
+            background-color: deepskyblue;
+            text-decoration: none;
+            cursor: pointer;
             transition-duration: 0.5s;
+            &:hover{
+              box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+              transform: translateY(-5px);
+              transition-duration: 0.5s;
+            }
           }
         }
       }
+    .tags-box{
+      margin-top: 10px;
+      font-size: 20px;
+      color: white;
     }
-  .tags-box{
-    margin-top: 10px;
-    font-size: 20px;
-    color: white;
+    .review-text{
+      margin-top: 20px;
+      font-size: 20px;
+      color: white;
+    }
+    .badge {
+      display: inline-block;
+      margin-left: 5px;
+      min-width: 10px;
+      font-weight: bold;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      background-color: brown;
+      border-radius: 10px;
+      cursor: pointer;
+      transition-duration: 0.3s;
+    }
+      .tag-text{
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+        transition: all 0.3s ease 0s; 
+        padding: 5px 5px;
+      }
+      .badge:hover{
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+        transform: translateY(-2px);
+        transition-duration: 0.5s;
+      }
   }
-  .review-text{
-    margin-top: 20px;
-    font-size: 20px;
-    color: white;
-  }
-  .badge {
+  .badge2{
+    padding: 5px;
     display: inline-block;
     margin-left: 5px;
     min-width: 10px;
@@ -90,36 +119,140 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    background-color: brown;
     border-radius: 10px;
-    cursor: pointer;
-    transition-duration: 0.3s;
+    background-color: brown;
+    color: #fff;
+    font-size: 23px;
   }
-    .tag-text{
-      text-decoration: none;
-      color: #fff;
-      font-size: 20px;
-      transition: all 0.3s ease 0s; 
-      padding: 5px 5px;
-    }
-    .badge:hover{
-      box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
-      transform: translateY(-2px);
-      transition-duration: 0.5s;
-    }
 }
-.badge2{
-  padding: 5px;
-  display: inline-block;
-  margin-left: 5px;
-  min-width: 10px;
-  font-weight: bold;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  border-radius: 10px;
-  background-color: brown;
-  color: #fff;
-  font-size: 23px;
+
+@media screen and (max-width: 480px){ 
+  .video-content {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px #ccc;
+    background-image: url("kuro1.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow: scroll;
+    .video-product {
+      width: 100%;
+      height: 40%;
+      &-image {
+        width: 100vw;
+        height: auto;
+      }
+      &-sum{
+        height: 230px;
+        width: 55%;
+        margin: 10px auto;
+        display: block;
+      }
+    }
+      .more{
+        padding: 0 10px 10px 10px;
+        width: 98vw;
+        height: 100%;
+        .product-name {
+          font-size: 80%;
+          color: aliceblue;
+          text-decoration: none;
+          margin: 5px 0 0 10px;
+        }
+        .product-date {
+          font-size: 80%;
+          color: aliceblue;
+          margin: 5px 0 0 10px;
+        }
+        .video-title {
+          font-size: 200%;
+          margin: 5px;
+          color: aliceblue;
+          word-wrap: break-word;
+        }
+        .video-text{
+          padding: 10px;
+          font-size:100%;
+          color: aliceblue;
+          word-wrap: break-word;
+        }
+        .video-under {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: -5px;
+          .video-btn{
+            font-size: 20px;
+            display: inline-block;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #08f;
+            color: white;
+            text-align: center;
+            background-color: deepskyblue;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            &:hover{
+              box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+              transform: translateY(-5px);
+              transition-duration: 0.5s;
+            }
+          }
+        }
+      }
+    .tags-box{
+      font-size: 120%;
+      color: white;
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+    .review-text{
+      margin-top: 10px;
+      margin-left: 10px;
+      font-size: 160%;
+      color: white;
+    }
+    .badge {
+      display: inline-block;
+      margin-left: 5px;
+      min-width: 10px;
+      font-weight: bold;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      background-color: brown;
+      border-radius: 10px;
+      cursor: pointer;
+      transition-duration: 0.3s;
+    }
+      .tag-text{
+        text-decoration: none;
+        color: #fff;
+        font-size: 120%;
+        transition: all 0.3s ease 0s; 
+        padding: 2px 2px;
+      }
+      .badge:hover{
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+        transform: translateY(-2px);
+        transition-duration: 0.5s;
+      }
+  }
+  .badge2{
+    padding: 5px;
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 10px;
+    background-color: brown;
+    color: #fff;
+    font-size: 80%;
+  }
 }

@@ -10,13 +10,13 @@
         = link_to "全部", tag_search_product_path(1), class:"choice-btn2"
     -if current_page?(tag_search_product_path(1))
       %span
-      = form_with(url: tag_search_product_path(4),local: true, method: :get, class: "search-tag-form") do |form|
-        = form.text_field :tag_name, placeholder: "タグワード", class: "search-tag-input"
-        = form.submit value: "検索", class: "search-tag-btn"
+      = form_with(url: tag_search_product_path(4),local: true, method: :get, class: "search-ward-form") do |form|
+        = form.text_field :tag_name, placeholder: "タグワード", class: "search-ward-input"
+        = form.submit value: "検索", class: "search-ward-btn", data:{disable_with:"送信中"}
     -if current_page?(tag_search_product_path(4))
       %span
-      = form_with(url: tag_search_product_path(4),local: true, method: :get, class: "search-tag-form") do |form|
-        = form.text_field :tag_name, placeholder: "タグワード", class: "search-tag-input"
-        = form.submit value: "検索", class: "search-tag-btn"
+      = form_with(url: tag_search_product_path(4),local: true, method: :get, class: "search-ward-form") do |form|
+        = form.text_field :tag_name, placeholder: "タグワード", class: "search-ward-input"
+        = form.submit value: "検索", class: "search-ward-btn"
   .tag-area
     = render partial: "tag-card", locals:{tags:@tags}

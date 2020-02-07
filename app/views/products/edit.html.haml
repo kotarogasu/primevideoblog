@@ -1,7 +1,5 @@
-%head 
-  %script{:defer => "defer", :src => "http://code.jquery.com/jquery-3.3.1.min.js"}
-  %body
-  .contents  
-    .form-title
-      %h1 投稿内容を編集
+.contents  
+  .form-title
+    投稿内容を編集
+  .container
     = render partial: 'form', locals: {product: @product}

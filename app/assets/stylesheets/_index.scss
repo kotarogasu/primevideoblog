@@ -51,6 +51,24 @@
         color: gray;
       }
     }
+    .header-nav2{
+      display: flex;
+      justify-content: flex-end;
+      height: 150px;
+      width: calc(100% - 500px);
+      .nav-item{
+        font-size:30px;
+        font-family: 'Permanent+Marker', serif;
+        line-height: 120px;
+        margin: 0px 20px;
+      }
+      .nav-text{
+        text-decoration: none;
+        cursor: pointer;
+        color: gray;
+        transition: all 0.3s ease 0s;  
+      }
+    }
   }
 
   .main-image{
@@ -262,15 +280,12 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
-      margin-left: 40px;
-      margin-right: 10px;
-      margin-bottom: 40px;
+      margin-left: 30px;
     }
     .product-card{
       height: 280px;
       width: 310px;
       position: relative;
-      margin: 5px -15px;
     }
       .content-post{
         background-color: #ccc;
@@ -339,7 +354,7 @@
       text-decoration: none;
     }
     .product-img{
-      width: 260px;
+      width: 290px;
       height: 250px;
     }
   }
@@ -368,7 +383,7 @@
     }
     .title-text{
       text-decoration: none;
-      font-size: 35px;
+      font-size: 200%;
       font-family: 'Permanent+Marker', serif;
       color: gray;
       text-shadow: 2px 1px 2px powderblue;
@@ -386,7 +401,7 @@
     width: 100%;
     margin-top: -5px;
     .nav-item{
-      font-size:20px;
+      font-size:110%;
       font-family: 'Permanent+Marker', serif;
     }
     .nav-text{
@@ -399,7 +414,7 @@
       color: #fff;
     }
     .nickname-text{
-      font-size:20px;
+      font-size:110%;
       margin-left: 50px;
       font-family: 'Permanent+Marker', serif;
       color: gray;
@@ -644,7 +659,7 @@
           }
       }
       .product-img{
-        width: 100%;
+        width: 92%;
         height: 150px;
       }
       .content-post:hover{
@@ -671,7 +686,7 @@
           transform: translateY(-3px);
           transition-duration: 0.2s;
         }
-        }
+      }
     .category-name{
       display: block;
       transition: .3s;

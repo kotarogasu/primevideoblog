@@ -89,7 +89,16 @@ class ProductsController < ApplicationController
     
   def destroy
     product = Product.find(params[:id])
-    product.destroy
+    if product.destroy
+      if product[:category_id] <= 13  
+        redirect_to root_path, notice: '削除に成功しました'
+      else product[:category_id] >= 14
+        redirect_to product_path(14), notice: '削除に成功しました'
+      end
+    else
+      flash.now[:alert] = '削除に失敗しました'
+      render :edit
+    end
   end
 
   def edit
@@ -99,12 +108,12 @@ class ProductsController < ApplicationController
     @product.update(product_params)
     if @product.save
       if @product[:category_id] <= 13  
-        redirect_to root_path, notice: '投稿に成功しました'
+        redirect_to root_path, notice: '編集に成功しました'
       else @product[:category_id] >= 14
-        redirect_to product_path(14), notice: '投稿に成功しました'
+        redirect_to product_path(14), notice: '編集に成功しました'
       end
     else
-      flash.now[:alert] = '投稿に失敗しました'
+      flash.now[:alert] = '編集に失敗しました'
       render :edit
     end
   end
@@ -141,25 +150,4 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id]) 
   end
 
-  # def category_type
-  #   @action = Product.where(category_id:2).recent10
-  #   @sf = Product.where(category_id:3).recent10
-  #   @comedy = Product.where(category_id:4).recent10
-  #   @human = Product.where(category_id:5).recent10
-  #   @fantasy = Product.where(category_id:6).recent10
-  #   @lovestory = Product.where(category_id:7).recent10
-  #   @horror = Product.where(category_id:8).recent10
-  #   @musical= Product.where(category_id:9).recent10
-  #   @war = Product.where(category_id:10).recent10
-  #   @jmovie = Product.where(category_id:11).recent10
-  #   @kmovie = Product.where(category_id:12).recent10
-  #   @metc = Product.where(category_id:13).recent10
-  #   @drama = Product.where(category_id:15).recent10
-  #   @wdrama = Product.where(category_id:16).recent10
-  #   @tvcomedy = Product.where(category_id:17).recent10
-  #   @korea = Product.where(category_id:18).recent10
-  #   @anime = Product.where(category_id:19).recent10
-  #   @tvetc = Product.where(category_id:20).recent10
-  # end
-  
 end
