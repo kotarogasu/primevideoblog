@@ -3,13 +3,11 @@
     background-color: black;
     height: 100vh;
     width: 100vw;
-    padding: 0 auto;
     
   }
 
   .post-content-users{
     background-color: black;
-    padding: 10px 20px 10px 100px;
   }
 
   .title-box{
@@ -29,13 +27,6 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 40px;
-    .bx-controls-auto {
-      z-index: 2;
-      bottom: -10px !important;;
-    }
     .nickname-text-show{
       color: #fff;
       position: absolute;
@@ -66,19 +57,18 @@
     background-color: black;
     height: 100vh;
     width: 100vw;
-    padding: 0 auto;
+
   }
 
   .post-content-users{
     background-color: black;
-    padding: 0 20px 10px 50px;
   }
 
   .title-box{
     background:#000;
     color:#fff;
     font-size: 140%;
-    width:100%;
+    width:95%;
     border-top:7px dashed #fff;
     border-bottom:7px dashed #fff;
     box-shadow: 0 0 3px 8px #000,25px 20px 4px 2px rgba(0,0,0,0.2);
@@ -89,11 +79,9 @@
   }
   .card-area2{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     .bx-controls-auto {
       z-index: 2;
       bottom: -10px !important;;

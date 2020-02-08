@@ -8,7 +8,6 @@
     background-image: url("kuro1.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    overflow: auto;
     .video-product {
       width: 100%;
       height: 100%;
@@ -127,18 +126,28 @@
 }
 
 @media screen and (max-width: 480px){ 
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+  }
   .video-content {
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
     border-radius: 5px;
     box-shadow: 0 3px 6px #ccc;
     background-image: url("kuro1.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    overflow: scroll;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     .video-product {
       width: 100%;
       height: 40%;
+      padding: 20px 0;
       &-image {
         width: 100vw;
         height: auto;
@@ -146,19 +155,18 @@
       &-sum{
         height: 230px;
         width: 55%;
-        margin: 10px auto;
+        margin: auto;
         display: block;
       }
     }
       .more{
         padding: 0 10px 10px 10px;
         width: 98vw;
-        height: 100%;
         .product-name {
           font-size: 80%;
           color: aliceblue;
           text-decoration: none;
-          margin: 5px 0 0 10px;
+          margin: 10px 0 0 10px;
         }
         .product-date {
           font-size: 80%;
@@ -172,15 +180,17 @@
           word-wrap: break-word;
         }
         .video-text{
+          min-height: 80px;
           padding: 10px;
           font-size:100%;
           color: aliceblue;
           word-wrap: break-word;
+          
         }
         .video-under {
           display: flex;
           justify-content: flex-end;
-          margin-bottom: -5px;
+          margin: 5px 10px 0 0;
           .video-btn{
             font-size: 20px;
             display: inline-block;

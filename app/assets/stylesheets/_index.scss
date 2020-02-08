@@ -7,10 +7,13 @@
     padding: 10px;
     display: flex;
     justify-content: flex-start;
-      &-title{
-        margin: 0 30px;
-        line-height: 110px;
-      } 
+    z-index: 1;
+    position: sticky;
+    top: 0px;
+    &-title{
+      margin: 0 30px;
+      line-height: 110px;
+    } 
     .title-text{
       text-decoration: none;
       font-size: 50px;
@@ -373,6 +376,9 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    z-index: 1;
+    position: sticky;
+    top: 0px;
     &-title{
       margin: 0 auto;
       line-height: 60px;
@@ -448,12 +454,13 @@
     border: none !important;
   }
   .bx-pager{
-    z-index: 2;
+    z-index: 0;
     margin-bottom: 40px;
   }
   .bx-controls-direction a {
     width: 40px !important;
     height: 40px!important;
+    z-index: 0 !important;
   }
   .bx-prev{
     background: url(prev.png)!important;
