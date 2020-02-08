@@ -20,3 +20,5 @@
         = form.submit value: "検索", class: "search-ward-btn"
   .tag-area
     = render partial: "tag-card", locals:{tags:@tags}
+  .paginate
+    = paginate(@tags)

@@ -4,4 +4,6 @@
   .post-content
     .post-content-users
       = render partial: "product-card2", locals: {products: @products}
+    .paginate
+      = paginate(@products)
       

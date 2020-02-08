@@ -78,6 +78,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootstrap-sass'
 gem 'nokogiri'
 gem 'ransack'
+gem 'kaminari'
 
 
 gem 'pg', group: :production

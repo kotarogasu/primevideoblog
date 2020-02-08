@@ -3,6 +3,6 @@ class UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     @nickname = user.nickname
-    @products = user.products
+    @products = user.products.order("created_at DESC").page(params[:page]).per(8)
   end
 end

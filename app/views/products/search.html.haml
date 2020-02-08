@@ -8,3 +8,5 @@
           = form.submit value: "検索", class: "search-ward-btn",data:{disable_with:"送信中"}
     .post-content-users
       = render partial: "product-card2", locals: {products: @products}
+      .paginate
+        = paginate(@products)

@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   def category_show
     category = Category.find(params[:id])
     @cate_name = category.name
-    @products = category.products
+    @products = category.products.order("created_at DESC").page(params[:page]).per(8)
 
     # @category = Category.all.includes(:products)
   end  
@@ -64,25 +64,25 @@ class ProductsController < ApplicationController
     @product = Product.all
     @tag = params[:tag_name]
       if params[:tag_name]
-        @products = @product.tagged_with("#{params[:tag_name]}")
+        @products = @product.tagged_with("#{params[:tag_name]}").order("created_at DESC").page(params[:page]).per(8)
       end
   end
 
   def tag_search
     case
     when params[:id] == "1"
-      @tags = Product.tag_counts_on(:tags).order('count DESC')
+      @tags = Product.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(35)
     when params[:id] == "2"
       @movie = Product.where(category_id: 1..13) 
-      @tags = @movie.tag_counts_on(:tags).order('count DESC')
+      @tags = @movie.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(35)
     when params[:id] == "3"
       @tv = Product.where(category_id: 14..20)  
-      @tags = @tv.tag_counts_on(:tags).order('count DESC')
+      @tags = @tv.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(35)
     when params[:id] == "4"
       @tag_search = Product.tagged_with(params[:tag_name],:any => true, :wild => true)
-      @tags = @tag_search.tag_counts_on(:tags).order('count DESC')
+      @tags = @tag_search.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(35)
       if params[:tag_name].empty?
-       @tags = Product.tag_counts_on(:tags).order('count DESC')
+       @tags = Product.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(35)
       end
     end
   end
@@ -119,7 +119,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search(params[:keyword])
+    @products = Product.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(8)
   end
 
   private
