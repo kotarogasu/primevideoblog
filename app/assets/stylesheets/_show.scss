@@ -1,7 +1,19 @@
 @media screen and (min-width: 481px){ 
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
   .video-content {
-    width: 100vw;
-    height:100vh;
+    min-width: 100%;
+    min-height: 100%;
+    display: table;
+    height: inherit;
     border-radius: 5px;
     box-shadow: 0 3px 6px #ccc;
     position: fixed;
@@ -9,15 +21,13 @@
     background-repeat: no-repeat;
     background-size:cover;
     .video-product {
-      width: 100%;
-      height: 100%;
       display: flex;
       &-image {
         margin-top: 5%;
         margin-left: 60px; 
       }
       &-sum{
-        height: 50%;
+        height: 70%;
         width: 100%;
       }
     }
