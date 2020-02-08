@@ -1,6 +1,35 @@
-.paginate {
-  text-align: center;
-  margin:0 auto;
-  margin-top: -30px
-  
+@media screen and (min-width: 481px){  
+  .paginate {
+    text-align: center;
+    margin:0 auto;
+    margin-top: -30px
+  }
+  .page-item{
+    display: inline-block;
+  }
+  .page-link{
+    font-size: initial;
+    padding:3px 5px;
+  }
+  .page-item.gap{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px){ 
+  .paginate {
+    text-align: center;
+    margin:0 auto;
+    margin-top: -30px
+  }
+  .page-item{
+    display: inline-block;
+  }
+  .page-link{
+    font-size: 15px;
+    padding:1px 1px;
+  }
+  .page-item.gap{
+    display: none;
+  }
 }
