@@ -71,18 +71,18 @@ class ProductsController < ApplicationController
   def tag_search
     case
     when params[:id] == "1"
-      @tags = Product.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(20)
+      @tags = Product.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(15)
     when params[:id] == "2"
       @movie = Product.where(category_id: 1..13) 
-      @tags = @movie.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(20)
+      @tags = @movie.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(15)
     when params[:id] == "3"
       @tv = Product.where(category_id: 14..20)  
-      @tags = @tv.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(20)
+      @tags = @tv.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(15)
     when params[:id] == "4"
       @tag_search = Product.tagged_with(params[:tag_name],:any => true, :wild => true)
-      @tags = @tag_search.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(20)
+      @tags = @tag_search.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(15)
       if params[:tag_name].empty?
-       @tags = Product.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(20)
+       @tags = Product.tag_counts_on(:tags).order('count DESC').page(params[:page]).per(15)
       end
     end
   end
