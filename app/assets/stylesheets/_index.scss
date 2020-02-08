@@ -143,7 +143,6 @@
   .post-content{
     background-color: black;
     padding-bottom: 10px;
-    overflow: auto;
     .search-form{
     text-align: center;
     position: sticky;
@@ -478,12 +477,8 @@
   .post-content{
     background-color: black;
     padding-bottom: 10px;
-    overflow: auto;
     .search-form{
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1;
     background-color: black;
     }
     .choice-btn{
