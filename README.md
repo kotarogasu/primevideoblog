@@ -4,8 +4,7 @@
   某動画配信サイトに依存した映画、番組のblog共有と作品検索アプリです。  
   https://primevideoblog.herokuapp.com/  
 
-  ![スクリーンショット 2020-02-09 11 44 09](https://user-images.githubusercontent.com/56858292/74095247-82504200-4b31-11ea-93c0-d42fdbef2a13.png)
-
+  <img width="1440" alt="スクリーンショット 2020-02-09 11 59 27" src="https://user-images.githubusercontent.com/56858292/74095431-f0960400-4b33-11ea-913c-505aec25461d.png">
 
 # Development background
   【開発意図】  
