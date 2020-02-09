@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :details, :update]
-  # before_action :category_type, only:[:index, :category_show]
   before_action :authenticate_user!, only: [:post]
 
   require 'open-uri' #URLにアクセスする為のライブラリを読み込みます。
