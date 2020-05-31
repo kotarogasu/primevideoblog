@@ -31,7 +31,7 @@ acter2 = doc.css("#btf-product-details ._33ixDQ")
 # end
 
 puts title.text
-puts img
+# puts img
 puts acter.text
 # puts acter2.text
 
