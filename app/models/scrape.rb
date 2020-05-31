@@ -1,7 +1,7 @@
 require 'open-uri' #URLにアクセスする為のライブラリを読み込みます。
 require 'nokogiri' #Nokogiriライブラリを読み込みます。
 
-url = 'https://www.amazon.co.jp/gp/video/detail/B00OSYDK5Q/ref=atv_hm_hom_1_c_ws5uSS_2_7'#切り出すURLを指定します。
+url = 'https://www.amazon.co.jp/gp/video/detail/B07MHY5Z8W/ref=atv_dp_b06_det_c_Z0r2A3_1_4'#切り出すURLを指定します。
 
 opt = {}
 opt['User-Agent'] = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko) Chrome/2.0.172.33 Safari/530.5'
@@ -14,7 +14,7 @@ end
 
 doc = Nokogiri::HTML.parse(html, nil, charset) #htmlを解析し、オブジェクト化
 title = doc.css("._2Q73m9._2Q73m9._2Q73m9")
-img = doc.css(".av-page-desktop ._2a7NJV img")[0][:src]
+＃img = doc.css(".av-page-desktop ._2a7NJV img")[0][:src]
 # (".av-page-desktop ._2a7NJV._2a7NJV._2a7NJV ")
 acter = doc.css("._33ixDQ")
 acter2 = doc.css("#btf-product-details ._33ixDQ")
