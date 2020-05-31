@@ -14,7 +14,7 @@ end
 
 doc = Nokogiri::HTML.parse(html, nil, charset) #htmlを解析し、オブジェクト化
 title = doc.css("._2Q73m9._2Q73m9._2Q73m9")
-＃img = doc.css(".av-page-desktop ._2a7NJV img")[0][:src]
+# img = doc.css(".av-page-desktop ._2a7NJV img")[0][:src]
 # (".av-page-desktop ._2a7NJV._2a7NJV._2a7NJV ")
 acter = doc.css("._33ixDQ")
 acter2 = doc.css("#btf-product-details ._33ixDQ")
